@@ -21,11 +21,11 @@ class ViewController: UIViewController {
         MovieBtn.layer.borderWidth = 5
         MovieBtn.layer.borderColor = UIColor.blue.cgColor
         
-        MovieBtn2.layer.cornerRadius = 100
+        MovieBtn2.layer.cornerRadius = MovieBtn.frame.height/2
         MovieBtn2.layer.borderWidth = 3
         MovieBtn2.layer.borderColor = UIColor.red.cgColor
         
-        MovieBtn3.layer.cornerRadius = 120
+        MovieBtn3.layer.cornerRadius = MovieBtn.frame.height/2
         MovieBtn3.layer.borderWidth = 2
         MovieBtn3.layer.borderColor = UIColor.yellow.cgColor
     }
