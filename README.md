@@ -1,3 +1,3 @@
 # Netflix_signupAdded
 making signup page using keyboard up&amp;down
-![Jackflix_1](https://user-images.githubusercontent.com/87454813/177573201-754742e6-70d7-474b-ad41-5c7a7106945d.gif)
+![Jackflix_3](https://user-images.githubusercontent.com/87454813/177573957-78d6671d-e40a-43c1-995b-3025f3245a2f.gif)
