@@ -1,6 +1,4 @@
 # LEDBoard
 keyboard up&amp;down / View - isHidden
 
-
-https://user-images.githubusercontent.com/87454813/177783728-ee6b6339-7dea-4a87-9e19-d286d3372550.mov
-
+![saved](https://user-images.githubusercontent.com/87454813/177785139-78f9ca46-dcb5-4556-9d35-7023d7272984.gif)
