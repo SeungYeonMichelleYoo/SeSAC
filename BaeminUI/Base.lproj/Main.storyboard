@@ -341,7 +341,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNM-Hh-AW2">
                                 <rect key="frame" x="14" y="592" width="177" height="53"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-ES-jKa">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baeminstore" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-ES-jKa">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="53"/>
                                     </imageView>
                                 </subviews>
@@ -355,7 +355,18 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kY2-JF-WEb">
                                 <rect key="frame" x="205" y="592" width="195" height="53"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mealkit" translatesAutoresizingMaskIntoConstraints="NO" id="m54-sP-P9r">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="53"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="m54-sP-P9r" firstAttribute="top" secondItem="kY2-JF-WEb" secondAttribute="top" id="1fY-y6-Ciq"/>
+                                    <constraint firstAttribute="trailing" secondItem="m54-sP-P9r" secondAttribute="trailing" id="8m5-mC-SuW"/>
+                                    <constraint firstItem="m54-sP-P9r" firstAttribute="leading" secondItem="kY2-JF-WEb" secondAttribute="leading" id="9eV-lW-JBc"/>
+                                    <constraint firstAttribute="bottom" secondItem="m54-sP-P9r" secondAttribute="bottom" id="MAx-5e-7M8"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4U-LU-wFj">
                                 <rect key="frame" x="205" y="476" width="195" height="102"/>
@@ -765,6 +776,78 @@
             <point key="canvasLocation" x="3143" y="-2020"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Cev-vN-FXq">
+            <objects>
+                <viewController id="swA-fK-KIe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXm-dc-U4M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JNs-AE-HSl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0tB-gc-sBu">
+                                <rect key="frame" x="40" y="354" width="139" height="302.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jNR-4H-yyP">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="138.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jNR-4H-yyP" secondAttribute="height" multiplier="1:1" id="W6S-oo-HL2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-eK-tVS">
+                                        <rect key="frame" x="0.0" y="163.5" width="139" height="139"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jBS-eK-tVS" secondAttribute="height" multiplier="1:1" id="qPQ-cn-y4s"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jBS-eK-tVS" firstAttribute="width" secondItem="jBS-eK-tVS" secondAttribute="height" multiplier="1:1" id="4MV-Xm-rZr"/>
+                                    <constraint firstItem="jNR-4H-yyP" firstAttribute="width" secondItem="0tB-gc-sBu" secondAttribute="width" multiplier="0.4" constant="83.299999999999997" id="Wj6-rD-V9d"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-Lp-zPM">
+                                <rect key="frame" x="219" y="354" width="138.5" height="302.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1AB-dc-bai">
+                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="138.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1AB-dc-bai" secondAttribute="height" multiplier="1:1" id="xNB-73-6H3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ega-jO-GOw">
+                                        <rect key="frame" x="0.0" y="163.5" width="138.5" height="139"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ega-jO-GOw" secondAttribute="height" multiplier="1:1" id="mLd-1F-X19"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1AB-dc-bai" firstAttribute="width" secondItem="Oe8-Lp-zPM" secondAttribute="width" multiplier="0.4" constant="83.299999999999997" id="lTx-m5-ND4"/>
+                                    <constraint firstItem="ega-jO-GOw" firstAttribute="width" secondItem="ega-jO-GOw" secondAttribute="height" multiplier="1:1" id="muO-pM-VSe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tPV-g3-6u8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tPV-g3-6u8" firstAttribute="bottom" secondItem="0tB-gc-sBu" secondAttribute="bottom" constant="205.5" id="DHP-O3-fiQ"/>
+                            <constraint firstItem="Oe8-Lp-zPM" firstAttribute="leading" secondItem="0tB-gc-sBu" secondAttribute="trailing" constant="40" id="NTk-TJ-B3r"/>
+                            <constraint firstItem="0tB-gc-sBu" firstAttribute="leading" secondItem="tPV-g3-6u8" secondAttribute="leading" constant="40" id="aB3-OL-kdH"/>
+                            <constraint firstItem="JNs-AE-HSl" firstAttribute="top" secondItem="tPV-g3-6u8" secondAttribute="top" constant="44" id="aMh-Dw-Vvy"/>
+                            <constraint firstItem="0tB-gc-sBu" firstAttribute="top" secondItem="JNs-AE-HSl" secondAttribute="bottom" constant="50" id="hAh-Of-dgB"/>
+                            <constraint firstItem="JNs-AE-HSl" firstAttribute="leading" secondItem="tPV-g3-6u8" secondAttribute="leading" id="iyu-Gg-yDm"/>
+                            <constraint firstItem="tPV-g3-6u8" firstAttribute="trailing" secondItem="JNs-AE-HSl" secondAttribute="trailing" id="mLY-9h-a2y"/>
+                            <constraint firstItem="Oe8-Lp-zPM" firstAttribute="top" secondItem="JNs-AE-HSl" secondAttribute="bottom" constant="50" id="vRu-RX-0PR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuK-YF-anO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3991.3043478260875" y="-2014.2857142857142"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="z44-WR-thh">
             <objects>
                 <viewController id="P6Q-oK-wY4" customClass="ViewController" customModule="BaeminUI" customModuleProvider="target" sceneMemberID="viewController">
@@ -1150,9 +1233,11 @@
     </scenes>
     <resources>
         <image name="baemin1" width="173" height="173"/>
+        <image name="baeminstore" width="351" height="81"/>
         <image name="bmart" width="173" height="108"/>
         <image name="churros" width="200" height="300"/>
         <image name="lasso" catalog="system" width="128" height="118"/>
+        <image name="mealkit" width="173" height="108"/>
         <image name="mono_baedal01" width="112" height="62"/>
         <image name="mono_baedal03" width="92" height="92"/>
         <image name="mono_baedal05" width="92" height="99"/>
