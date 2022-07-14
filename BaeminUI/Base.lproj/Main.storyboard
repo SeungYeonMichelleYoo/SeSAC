@@ -603,15 +603,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Duw-GU-6Hi"/>
                     <connections>
+                        <outlet property="d100Label" destination="bbL-K5-Ob0" id="3Ey-dK-NaA"/>
+                        <outlet property="d200Label" destination="dBd-Te-v9D" id="Lkm-iI-IxR"/>
+                        <outlet property="d300Label" destination="Vtc-V6-nao" id="sli-tl-zt1"/>
+                        <outlet property="d400Label" destination="ksS-yx-3Zw" id="ueh-x2-qhd"/>
                         <outlet property="datePicker" destination="ODP-dx-Bwx" id="9MK-uh-E4Q"/>
                         <outletCollection property="imageViewCollection" destination="Diq-8l-iAR" collectionClass="NSMutableArray" id="bn4-Pf-9VZ"/>
                         <outletCollection property="imageViewCollection" destination="eua-In-P57" collectionClass="NSMutableArray" id="flz-YW-HaB"/>
-                        <outletCollection property="imageViewCollection" destination="Klu-cU-iy4" collectionClass="NSMutableArray" id="QKI-Pk-YfY"/>
                         <outletCollection property="imageViewCollection" destination="O0I-7t-ijh" collectionClass="NSMutableArray" id="G2w-6L-Nym"/>
-                        <outletCollection property="DdayLabelCollection" destination="bbL-K5-Ob0" collectionClass="NSMutableArray" id="AcU-ck-SNR"/>
-                        <outletCollection property="DdayLabelCollection" destination="dBd-Te-v9D" collectionClass="NSMutableArray" id="ggf-Mo-lZR"/>
-                        <outletCollection property="DdayLabelCollection" destination="Vtc-V6-nao" collectionClass="NSMutableArray" id="yTE-Yv-aIp"/>
-                        <outletCollection property="DdayLabelCollection" destination="ksS-yx-3Zw" collectionClass="NSMutableArray" id="4kp-Ye-8Tb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xaq-ZY-GUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
