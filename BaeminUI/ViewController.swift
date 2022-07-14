@@ -28,10 +28,11 @@ class ViewController: UIViewController {
         
         firstLabel.text = setUserNickname()
         
-        view.backgroundColor = example().0
-        emotionFirstButton.setImage(UIImage(named: example().2), for: .normal)
+        view.backgroundColor = example().0 //아래 적은 튜플의 첫번째 요소인 UIColor
+ 
+        emotionFirstButton.setImage(UIImage(named: example().2), for: .normal) //첫번째 버튼의 이미지
         
-        emotionFirstButton.tag = 0
+        emotionFirstButton.tag = 0 //버튼 태그 초기값 ??
         
 //        let image = UIImage(named: "sesac_slime6")?.withRenderingMode(.alwaysOriginal)
 //        emotionFirstButton.setImage(image, for: .normal)
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
     
     //배경색, 레이블, 이미지 - 타입의 제약 없이 쓸 수 있는건 튜플로 ( )
     func example() -> (UIColor, String, String) {
-        let color: [UIColor] = [.yellow, .red, .blue]
+        let color: [UIColor] = [.yellow, .red, .systemPink]
         let image: [String] = ["sesac_slime6", "sesac_slime7", "sesac_slime8", "sesac_slime5"]
         return (color.randomElement()!, "고래밥", image.randomElement()!)
     }
@@ -50,28 +51,28 @@ class ViewController: UIViewController {
     func setUserNickname() -> String {
         let nickname = ["고래밥", "칙촉", "격투가"]
         let select = nickname.randomElement()!
-        
         return "저는 \(select)입니다."
     }
     
     @IBAction func emotionBtnClicked(_ sender: UIButton) {
-        print(sender.tag, sender.currentTitle, sender.currentImage)
+        print(sender.tag, sender.currentTitle, sender.currentImage) //옵셔널로 찍혀서 print 확인 불가
         emotionArray[sender.tag] += 1
+        print(sender.tag) //몇 번째 버튼을 클릭하는지 tag 숫자가 찍힌다.
         
-        firstLabel.text = "\(emotionArray[0])"
-        secondLabel.text = "\(emotionArray[1])"
-        thirdLabel.text = "\(emotionArray[2])"
-        fourthLabel.text = "\(emotionArray[3])"
-        fifthLabel.text = "\(emotionArray[4])"
-        sixthLabel.text = "\(emotionArray[5])"
-        seventhLabel.text = "\(emotionArray[6])"
-        eighthLabel.text = "\(emotionArray[7])"
-        ninethLabel.text = "\(emotionArray[8])"
+        firstLabel.text = "행복해 \(emotionArray[0])"
+        secondLabel.text = "사랑해 \(emotionArray[1])"
+        thirdLabel.text = "좋아해 \(emotionArray[2])"
+        fourthLabel.text = "당황해 \(emotionArray[3])"
+        fifthLabel.text = "속상해 \(emotionArray[4])"
+        sixthLabel.text = "우울해 \(emotionArray[5])"
+        seventhLabel.text = "심심해 \(emotionArray[6])"
+        eighthLabel.text = "행복해 \(emotionArray[7])"
+        ninethLabel.text = "속상해 \(emotionArray[8])"
         
         showAlertController()
     
     }
-    
+// MARK : - Alert
     func showAlertController() {
         
         //1. 흰 바탕: UIAlertController

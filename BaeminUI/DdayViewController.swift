@@ -12,6 +12,8 @@ class DdayViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
   
     @IBOutlet var imageViewCollection: [UIImageView]!
+
+    @IBOutlet var DdayLabelCollection: [UILabel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class DdayViewController: UIViewController {
     
     func cornerChange() {
         for i in imageViewCollection {
-            i.layer.cornerRadius = 8
+            i.layer.cornerRadius = 12
         }
     }
     
