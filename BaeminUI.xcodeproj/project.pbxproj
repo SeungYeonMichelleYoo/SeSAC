@@ -14,6 +14,13 @@
 		544C89742874215C00BDA3FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 544C89732874215C00BDA3FA /* Assets.xcassets */; };
 		544C89772874215C00BDA3FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544C89752874215C00BDA3FA /* LaunchScreen.storyboard */; };
 		54DD5C1E287D21CF00C473C0 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DD5C1D287D21CF00C473C0 /* SegmentedViewController.swift */; };
+		54F2CD18287FA68C00FEEDC1 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F2CD17287FA68C00FEEDC1 /* Setting.storyboard */; };
+		54F2CD1B287FA81400FEEDC1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F2CD1A287FA81400FEEDC1 /* Search.storyboard */; };
+		54F2CD1E287FAFB300FEEDC1 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 54F2CD1D287FAFB300FEEDC1 /* SideMenu */; };
+		54F2CD21287FAFDE00FEEDC1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 54F2CD20287FAFDE00FEEDC1 /* FSCalendar */; };
+		54F2CD24287FB00700FEEDC1 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 54F2CD23287FB00700FEEDC1 /* TextFieldEffects */; };
+		54F2CD27287FBE4B00FEEDC1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54F2CD26287FBE4B00FEEDC1 /* IQKeyboardManagerSwift */; };
+		54F2CD29287FC2C400FEEDC1 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2CD28287FC2C400FEEDC1 /* TextFieldController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,9 @@
 		544C89762874215C00BDA3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		544C89782874215C00BDA3FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54DD5C1D287D21CF00C473C0 /* SegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		54F2CD17287FA68C00FEEDC1 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		54F2CD1A287FA81400FEEDC1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		54F2CD28287FC2C400FEEDC1 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F2CD24287FB00700FEEDC1 /* TextFieldEffects in Frameworks */,
+				54F2CD27287FBE4B00FEEDC1 /* IQKeyboardManagerSwift in Frameworks */,
+				54F2CD1E287FAFB300FEEDC1 /* SideMenu in Frameworks */,
+				54F2CD21287FAFDE00FEEDC1 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +72,7 @@
 		544C89692874215C00BDA3FA /* BaeminUI */ = {
 			isa = PBXGroup;
 			children = (
+				54F2CD19287FA6B100FEEDC1 /* New Group */,
 				544C896A2874215C00BDA3FA /* AppDelegate.swift */,
 				544C896C2874215C00BDA3FA /* SceneDelegate.swift */,
 				544C896E2874215C00BDA3FA /* ViewController.swift */,
@@ -68,6 +83,16 @@
 				544C89782874215C00BDA3FA /* Info.plist */,
 			);
 			path = BaeminUI;
+			sourceTree = "<group>";
+		};
+		54F2CD19287FA6B100FEEDC1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				54F2CD1A287FA81400FEEDC1 /* Search.storyboard */,
+				54F2CD17287FA68C00FEEDC1 /* Setting.storyboard */,
+				54F2CD28287FC2C400FEEDC1 /* TextFieldController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +111,12 @@
 			dependencies = (
 			);
 			name = BaeminUI;
+			packageProductDependencies = (
+				54F2CD1D287FAFB300FEEDC1 /* SideMenu */,
+				54F2CD20287FAFDE00FEEDC1 /* FSCalendar */,
+				54F2CD23287FB00700FEEDC1 /* TextFieldEffects */,
+				54F2CD26287FBE4B00FEEDC1 /* IQKeyboardManagerSwift */,
+			);
 			productName = BaeminUI;
 			productReference = 544C89672874215C00BDA3FA /* BaeminUI.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +145,12 @@
 				Base,
 			);
 			mainGroup = 544C895E2874215C00BDA3FA;
+			packageReferences = (
+				54F2CD1C287FAFB300FEEDC1 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				54F2CD1F287FAFDE00FEEDC1 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				54F2CD22287FB00700FEEDC1 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				54F2CD25287FBE4B00FEEDC1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 544C89682874215C00BDA3FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +168,8 @@
 				544C89772874215C00BDA3FA /* LaunchScreen.storyboard in Resources */,
 				544C89742874215C00BDA3FA /* Assets.xcassets in Resources */,
 				544C89722874215C00BDA3FA /* Main.storyboard in Resources */,
+				54F2CD18287FA68C00FEEDC1 /* Setting.storyboard in Resources */,
+				54F2CD1B287FA81400FEEDC1 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				544C896F2874215C00BDA3FA /* ViewController.swift in Sources */,
+				54F2CD29287FC2C400FEEDC1 /* TextFieldController.swift in Sources */,
 				54DD5C1E287D21CF00C473C0 /* SegmentedViewController.swift in Sources */,
 				544C896B2874215C00BDA3FA /* AppDelegate.swift in Sources */,
 				544C896D2874215C00BDA3FA /* SceneDelegate.swift in Sources */,
@@ -295,7 +335,7 @@
 				INFOPLIST_FILE = BaeminUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Setting;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +362,7 @@
 				INFOPLIST_FILE = BaeminUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Setting;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +400,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54F2CD1C287FAFB300FEEDC1 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		54F2CD1F287FAFDE00FEEDC1 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		54F2CD22287FB00700FEEDC1 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		54F2CD25287FBE4B00FEEDC1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54F2CD1D287FAFB300FEEDC1 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F2CD1C287FAFB300FEEDC1 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+		54F2CD20287FAFDE00FEEDC1 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F2CD1F287FAFDE00FEEDC1 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		54F2CD23287FB00700FEEDC1 /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F2CD22287FB00700FEEDC1 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		54F2CD26287FBE4B00FEEDC1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F2CD25287FBE4B00FEEDC1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 544C895F2874215C00BDA3FA /* Project object */;
 }
