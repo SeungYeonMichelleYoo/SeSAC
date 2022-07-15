@@ -24,6 +24,19 @@ class DdayViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         cornerChange()
+        labelTextChange()
+    }
+    
+    private func labelTextChange() {
+        d100Label.textColor = .white
+        d200Label.textColor = .white
+        d300Label.textColor = .white
+        d400Label.textColor = .white
+        
+        d100Label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        d200Label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        d300Label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        d400Label.font = UIFont.boldSystemFont(ofSize: 20.0)
     }
     
     private func configureUI() {
@@ -39,30 +52,43 @@ class DdayViewController: UIViewController {
                datePicker.preferredDatePickerStyle = .wheels
            }
            datePicker.datePickerMode = .date
-           datePicker.locale = Locale(identifier: "ko-KR")
            datePicker.timeZone = .autoupdatingCurrent
    }
+    
     
     @IBAction func DatePickerChanged(_ sender: UIDatePicker) {
         changed()
     }
     
     func changed() {
+        //달력에서 본인이 선택한 날짜를 변수에 담음
+        let date = datePicker.date
+        
         let dateformatter = DateFormatter()
         dateformatter.dateStyle = .short
         dateformatter.timeStyle = .none
-        let date = datePicker.date
+        //한국시간으로 표시
+        dateformatter.locale = Locale(identifier: "ko_kr")
+        //형태변환
+        dateformatter.dateFormat = "yyyy년 MM월 dd일"
+        
+        //선택한 날짜에 D+100, D+200,... 더하기
         let pickerDatePlus100Days = Calendar.current.date(byAdding: .day, value: 100, to: date)
         let pickerDatePlus200Days = Calendar.current.date(byAdding: .day, value: 200, to: date)
         let pickerDatePlus300Days = Calendar.current.date(byAdding: .day, value: 300, to: date)
         let pickerDatePlus400Days = Calendar.current.date(byAdding: .day, value: 400, to: date)
-        print(pickerDatePlus100Days)
-        print(date)
-        d100Label.text = pickerDatePlus100Days?.formatted()
-        d200Label.text = pickerDatePlus200Days?.formatted()
-        d300Label.text = pickerDatePlus300Days?.formatted()
-        d400Label.text = pickerDatePlus400Days?.formatted()
-        //dateformatter 에 대한 공부가 더 필요함.
+        
+        //라벨에 출력하기 위해서 string으로 변환 및 dateformatter 적용
+        let str_100d = dateformatter.string(from: pickerDatePlus100Days!)
+        let str_200d = dateformatter.string(from: pickerDatePlus200Days!)
+        let str_300d = dateformatter.string(from: pickerDatePlus300Days!)
+        let str_400d = dateformatter.string(from: pickerDatePlus400Days!)
+        
+        //라벨에 내용 출력
+        d100Label.text = str_100d
+        d200Label.text = str_200d
+        d300Label.text = str_300d
+        d400Label.text = str_400d
     }
     
     func cornerChange() {
