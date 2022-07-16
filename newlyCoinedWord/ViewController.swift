@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var showLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     
+    //단어 정리
     enum Enum: String, CaseIterable {
         case 윰차
         case 실매
