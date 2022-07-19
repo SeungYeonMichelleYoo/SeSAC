@@ -7,7 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5419AE422886992D0031812E /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5419AE412886992D0031812E /* Shopping.storyboard */; };
+		5419AE442886A32D0031812E /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AE432886A32D0031812E /* ShoppingTableViewCell.swift */; };
+		5419AE462886A39E0031812E /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AE452886A39E0031812E /* ShoppingTableViewController.swift */; };
+		5419AE482886BC060031812E /* MovieInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AE472886BC060031812E /* MovieInfoTableViewController.swift */; };
+		5419AE4A2886BC2C0031812E /* MovieInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419AE492886BC2C0031812E /* MovieInfoTableViewCell.swift */; };
 		5444C38D28855AAA00914AB8 /* AssignmentStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5444C38C28855AAA00914AB8 /* AssignmentStaticTableViewController.swift */; };
+		546C2E97288636870051AAED /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2E96288636870051AAED /* OptionsTableViewController.swift */; };
+		546C2E992886401B0051AAED /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 546C2E982886401B0051AAED /* Search.storyboard */; };
+		546C2E9B2886404A0051AAED /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 546C2E9A2886404A0051AAED /* Trend.storyboard */; };
+		546C2E9D288640840051AAED /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 546C2E9C288640840051AAED /* Intro.storyboard */; };
+		546C2E9F288644030051AAED /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2E9E288644030051AAED /* TrendViewController.swift */; };
+		546C2EA12886441D0051AAED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2EA02886441D0051AAED /* SearchViewController.swift */; };
+		546C2EA3288645240051AAED /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2EA2288645240051AAED /* UIViewController+Extension.swift */; };
+		546C2EA52886479A0051AAED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2EA42886479A0051AAED /* UITextField+Extension.swift */; };
+		546C2EA728864BA30051AAED /* BucketlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2EA628864BA30051AAED /* BucketlistTableViewController.swift */; };
+		546C2EA928864DA50051AAED /* BucketlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C2EA828864DA50051AAED /* BucketlistTableViewCell.swift */; };
 		54C06F1C2884DDCD001C7719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C06F1B2884DDCD001C7719 /* AppDelegate.swift */; };
 		54C06F1E2884DDCD001C7719 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C06F1D2884DDCD001C7719 /* SceneDelegate.swift */; };
 		54C06F202884DDCD001C7719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C06F1F2884DDCD001C7719 /* ViewController.swift */; };
@@ -21,7 +36,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5419AE412886992D0031812E /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		5419AE432886A32D0031812E /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		5419AE452886A39E0031812E /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		5419AE472886BC060031812E /* MovieInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewController.swift; sourceTree = "<group>"; };
+		5419AE492886BC2C0031812E /* MovieInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5444C38C28855AAA00914AB8 /* AssignmentStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentStaticTableViewController.swift; sourceTree = "<group>"; };
+		546C2E96288636870051AAED /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		546C2E982886401B0051AAED /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		546C2E9A2886404A0051AAED /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
+		546C2E9C288640840051AAED /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		546C2E9E288644030051AAED /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		546C2EA02886441D0051AAED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		546C2EA2288645240051AAED /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		546C2EA42886479A0051AAED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		546C2EA628864BA30051AAED /* BucketlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewController.swift; sourceTree = "<group>"; };
+		546C2EA828864DA50051AAED /* BucketlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewCell.swift; sourceTree = "<group>"; };
 		54C06F182884DDCD001C7719 /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C06F1B2884DDCD001C7719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54C06F1D2884DDCD001C7719 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +77,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5419AE362886869F0031812E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				54C06F212884DDCD001C7719 /* Main.storyboard */,
+				54C06F1F2884DDCD001C7719 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5419AE38288686F20031812E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54C06F2F2884F11B001C7719 /* Home.storyboard */,
+				54C06F312884FE48001C7719 /* SettingTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5419AE39288687240031812E /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				54C06F3328850FF8001C7719 /* Assignment.storyboard */,
+				5444C38C28855AAA00914AB8 /* AssignmentStaticTableViewController.swift */,
+				54C06F352885100D001C7719 /* AssignmentTableViewController.swift */,
+				546C2E96288636870051AAED /* OptionsTableViewController.swift */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		5419AE3B2886878F0031812E /* Trend */ = {
+			isa = PBXGroup;
+			children = (
+				546C2E9A2886404A0051AAED /* Trend.storyboard */,
+				546C2EA628864BA30051AAED /* BucketlistTableViewController.swift */,
+				546C2EA828864DA50051AAED /* BucketlistTableViewCell.swift */,
+				546C2E9E288644030051AAED /* TrendViewController.swift */,
+			);
+			path = Trend;
+			sourceTree = "<group>";
+		};
+		5419AE3C288687F10031812E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				546C2E982886401B0051AAED /* Search.storyboard */,
+				5419AE492886BC2C0031812E /* MovieInfoTableViewCell.swift */,
+				5419AE472886BC060031812E /* MovieInfoTableViewController.swift */,
+				546C2EA02886441D0051AAED /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5419AE3E288688650031812E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				546C2EA2288645240051AAED /* UIViewController+Extension.swift */,
+				546C2EA42886479A0051AAED /* UITextField+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5419AE40288699130031812E /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				5419AE412886992D0031812E /* Shopping.storyboard */,
+				5419AE432886A32D0031812E /* ShoppingTableViewCell.swift */,
+				5419AE452886A39E0031812E /* ShoppingTableViewController.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
 		54C06F0F2884DDCC001C7719 = {
 			isa = PBXGroup;
 			children = (
@@ -68,13 +168,14 @@
 			children = (
 				54C06F1B2884DDCD001C7719 /* AppDelegate.swift */,
 				54C06F1D2884DDCD001C7719 /* SceneDelegate.swift */,
-				54C06F1F2884DDCD001C7719 /* ViewController.swift */,
-				54C06F212884DDCD001C7719 /* Main.storyboard */,
-				54C06F2F2884F11B001C7719 /* Home.storyboard */,
-				54C06F3328850FF8001C7719 /* Assignment.storyboard */,
-				5444C38C28855AAA00914AB8 /* AssignmentStaticTableViewController.swift */,
-				54C06F352885100D001C7719 /* AssignmentTableViewController.swift */,
-				54C06F312884FE48001C7719 /* SettingTableViewController.swift */,
+				5419AE40288699130031812E /* Shopping */,
+				5419AE3E288688650031812E /* Extension */,
+				5419AE3C288687F10031812E /* Search */,
+				5419AE3B2886878F0031812E /* Trend */,
+				5419AE39288687240031812E /* Assignment */,
+				5419AE38288686F20031812E /* Home */,
+				5419AE362886869F0031812E /* Main */,
+				546C2E9C288640840051AAED /* Intro.storyboard */,
 				54C06F242884DDCD001C7719 /* Assets.xcassets */,
 				54C06F262884DDCD001C7719 /* LaunchScreen.storyboard */,
 				54C06F292884DDCD001C7719 /* Info.plist */,
@@ -140,10 +241,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546C2E9B2886404A0051AAED /* Trend.storyboard in Resources */,
 				54C06F282884DDCD001C7719 /* LaunchScreen.storyboard in Resources */,
 				54C06F252884DDCD001C7719 /* Assets.xcassets in Resources */,
+				546C2E9D288640840051AAED /* Intro.storyboard in Resources */,
 				54C06F232884DDCD001C7719 /* Main.storyboard in Resources */,
 				54C06F302884F11B001C7719 /* Home.storyboard in Resources */,
+				5419AE422886992D0031812E /* Shopping.storyboard in Resources */,
+				546C2E992886401B0051AAED /* Search.storyboard in Resources */,
 				54C06F3428850FF8001C7719 /* Assignment.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,11 +260,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5419AE482886BC060031812E /* MovieInfoTableViewController.swift in Sources */,
+				546C2E9F288644030051AAED /* TrendViewController.swift in Sources */,
 				5444C38D28855AAA00914AB8 /* AssignmentStaticTableViewController.swift in Sources */,
 				54C06F322884FE48001C7719 /* SettingTableViewController.swift in Sources */,
+				546C2EA12886441D0051AAED /* SearchViewController.swift in Sources */,
 				54C06F202884DDCD001C7719 /* ViewController.swift in Sources */,
+				5419AE442886A32D0031812E /* ShoppingTableViewCell.swift in Sources */,
 				54C06F1C2884DDCD001C7719 /* AppDelegate.swift in Sources */,
+				546C2EA52886479A0051AAED /* UITextField+Extension.swift in Sources */,
+				546C2EA728864BA30051AAED /* BucketlistTableViewController.swift in Sources */,
+				546C2E97288636870051AAED /* OptionsTableViewController.swift in Sources */,
 				54C06F1E2884DDCD001C7719 /* SceneDelegate.swift in Sources */,
+				546C2EA3288645240051AAED /* UIViewController+Extension.swift in Sources */,
+				546C2EA928864DA50051AAED /* BucketlistTableViewCell.swift in Sources */,
+				5419AE4A2886BC2C0031812E /* MovieInfoTableViewCell.swift in Sources */,
+				5419AE462886A39E0031812E /* ShoppingTableViewController.swift in Sources */,
 				54C06F362885100D001C7719 /* AssignmentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +427,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,7 +454,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

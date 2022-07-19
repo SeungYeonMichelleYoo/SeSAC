@@ -13,6 +13,8 @@ class SettingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 80 // default = 44
     }
     
     //섹션의 개수(옵션) 섹션의 디폴트는 1이라서 이 함수는 써도되고 안써도 됨.
@@ -62,9 +64,34 @@ class SettingTableViewController: UITableViewController {
     //ex. 카톡 이름, 프로필 사진, 상태 메시지 등
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        print("cellforrowat", indexPath)
+
+            if indexPath.section == 2 {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell")!
+                cell.textLabel?.text = "2번 인덱스 텍스트"
+                cell.textLabel?.textColor = .brown
+                cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+                cell.detailTextLabel?.text = "디테일 레이블"
+                
+                // indexPath.row % 2 == 0,1
+                
+                if indexPath.row % 2 == 0 {
+                    cell.imageView?.image = UIImage(systemName: "star")
+                    cell.backgroundColor = .lightGray
+                } else {
+                    cell.imageView?.image = UIImage(systemName: "star.fill")
+                    cell.backgroundColor = .white
+                }
+                
+                cell.imageView?.image = indexPath.row % 2 == 0 ? UIImage(systemName: "star") : UIImage(systemName: "star.fill")
+                cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white
+                
+                return cell
+            } else {
+                
         //1개의 셀이 100개로 복붙과 같은 효과가 일어난다. *100
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
-    
         if indexPath.section == 0 {
             cell.textLabel?.text = birthdayFriends[indexPath.row]
             cell.textLabel?.textColor = .systemMint
@@ -73,12 +100,15 @@ class SettingTableViewController: UITableViewController {
             cell.textLabel?.text = "1번 인덱스 텍스트"
             cell.textLabel?.textColor = .systemPink
             cell.textLabel?.font = .italicSystemFont(ofSize: 25)
-        } else if indexPath.section == 2 {
-            cell.textLabel?.text = "2번 인덱스 텍스트"
-            cell.textLabel?.textColor = .brown
-            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
         }
         return cell
     }
+ }
     
+    
+    //셀의 높이(옵션. 빈도 높은 함수) (feat. tableView.rowHeight)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
+    }
 }
