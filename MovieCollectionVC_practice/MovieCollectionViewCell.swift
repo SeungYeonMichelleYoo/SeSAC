@@ -30,4 +30,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         let backgroundColor: [UIColor] = [.yellow, .systemPink, .lightGray, .green, .systemOrange]
         backView.backgroundColor = backgroundColor.randomElement()
     }
+
+    
+
+
 }
