@@ -26,5 +26,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         rateLabel.text = "\(data.rate)"
 //        movieTitleLabel.sendSubviewToBack(posterImageView)
         backView.layer.cornerRadius = 16
+        
+        let backgroundColor: [UIColor] = [.yellow, .systemPink, .lightGray, .green, .systemOrange]
+        backView.backgroundColor = backgroundColor.randomElement()
     }
 }
