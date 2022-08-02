@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RXc-49-ybW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -156,25 +156,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Wh-N1-4Xe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Wh-N1-4Xe">
                                 <rect key="frame" x="34" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mp7-nG-Lm8">
+                                <rect key="frame" x="20" y="298" width="374" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OYI-cg-anp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="번역하기 클릭"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="39p-Pp-9EV" eventType="touchUpInside" id="RJl-Mw-3ET"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="34V-jd-KHW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="34V-jd-KHW" firstAttribute="trailing" secondItem="IsM-Cz-6gs" secondAttribute="trailing" constant="20" id="2I6-gF-w48"/>
+                            <constraint firstItem="Mp7-nG-Lm8" firstAttribute="width" secondItem="IsM-Cz-6gs" secondAttribute="width" id="4ga-vM-pzw"/>
+                            <constraint firstItem="Mp7-nG-Lm8" firstAttribute="top" secondItem="IsM-Cz-6gs" secondAttribute="bottom" constant="4" id="K2r-cL-yAU"/>
                             <constraint firstItem="IsM-Cz-6gs" firstAttribute="leading" secondItem="34V-jd-KHW" secondAttribute="leading" constant="20" id="Uik-89-VvM"/>
+                            <constraint firstItem="Mp7-nG-Lm8" firstAttribute="centerX" secondItem="tFk-oe-Ufo" secondAttribute="centerX" id="mWD-WU-8Mp"/>
+                            <constraint firstItem="IsM-Cz-6gs" firstAttribute="centerX" secondItem="tFk-oe-Ufo" secondAttribute="centerX" id="qAs-Qv-F0h"/>
                             <constraint firstItem="IsM-Cz-6gs" firstAttribute="top" secondItem="34V-jd-KHW" secondAttribute="top" constant="50" id="qcp-41-Mxu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="showTextView" destination="6Wh-N1-4Xe" id="Xul-hv-GgL"/>
                         <outlet property="userInputTextView" destination="IsM-Cz-6gs" id="Guo-Fb-ssz"/>
                     </connections>
                 </viewController>
@@ -383,6 +399,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -19,6 +19,7 @@ import SwiftyJSON
 
 class TranslateViewController: UIViewController {
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var showTextView: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
     
@@ -31,15 +32,18 @@ class TranslateViewController: UIViewController {
         userInputTextView.textColor = .lightGray
         
         userInputTextView.font = UIFont(name: "S-CoreDream-1Thin", size: 17)
-        
+    }
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
         requestTranslatedData()
     }
+    
     
     func requestTranslatedData() {
         
         let url = EndPoint.translateURL
         
-        let parameter = ["source": "ko", "target": "en", "text": "안녕하세요 저는 고래밥 과자를 좋아합니다."]
+        let parameter = ["source": "ko", "target": "en", "text": "\(userInputTextView.text!)"]
         
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
         
@@ -52,7 +56,7 @@ class TranslateViewController: UIViewController {
                 let statusCode = response.response?.statusCode ?? 500
                 
                 if statusCode == 200 {
-                    self.userInputTextView.text = json["message"]["result"]["translatedText"].stringValue
+                    self.showTextView.text = json["message"]["result"]["translatedText"].stringValue
                 } else {
                     self.userInputTextView.text = json["errorMessage"].stringValue
                 }
@@ -62,8 +66,6 @@ class TranslateViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 extension TranslateViewController: UITextViewDelegate {
     
