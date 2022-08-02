@@ -41,7 +41,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         searchBar.delegate = self
-        requestBoxOffice(text: "20220801")
+        requestBoxOffice(text: "\(makeYesterdayString())")
+    }
+    
+    //어제 날짜 가져오기
+    func makeYesterdayString() -> String {
+        let y = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let convertY = dateFormatter.string(from: y)
+        return convertY
     }
     
     func configureView() {
