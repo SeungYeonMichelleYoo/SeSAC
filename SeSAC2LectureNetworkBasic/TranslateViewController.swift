@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 //UIButton, UITextField -> action연결 가능
 //UITextView, UISearchBar, UIPickerView -> 액션 연결 불가
 //왜? view를 상속 받았기 때문(아래 3가지) / but 버튼, 텍스트필드는 view->control을 상속 받았기 때문에
@@ -28,8 +31,39 @@ class TranslateViewController: UIViewController {
         userInputTextView.textColor = .lightGray
         
         userInputTextView.font = UIFont(name: "S-CoreDream-1Thin", size: 17)
-                   
+        
+        requestTranslatedData()
     }
+    
+    func requestTranslatedData() {
+        
+        let url = EndPoint.translateURL
+        
+        let parameter = ["source": "ko", "target": "en", "text": "안녕하세요 저는 고래밥 과자를 좋아합니다."]
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        
+        AF.request(url, method: .post, parameters: parameter, headers: header).validate(statusCode: 200..<500).responseJSON { [self] response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200 {
+                    self.userInputTextView.text = json["message"]["result"]["translatedText"].stringValue
+                } else {
+                    self.userInputTextView.text = json["errorMessage"].stringValue
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
 }
 extension TranslateViewController: UITextViewDelegate {
     

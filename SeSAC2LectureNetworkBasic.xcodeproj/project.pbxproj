@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541227DA2898BD2C0064CC7A /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541227D92898BD2C0064CC7A /* BoxOfficeModel.swift */; };
 		5445812E2897CE2000745D54 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445812D2897CE2000745D54 /* BeerViewController.swift */; };
 		54507AF428920CE4000AAA7A /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54507AF328920CE4000AAA7A /* ViewPresentableProtocol.swift */; };
 		54507AF62892237B000AAA7A /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54507AF52892237B000AAA7A /* LottoViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541227D92898BD2C0064CC7A /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 		5445812D2897CE2000745D54 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		54507AF328920CE4000AAA7A /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		54507AF52892237B000AAA7A /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				549C9B4B2890DD7D00025C3D /* SceneDelegate.swift */,
 				549C9B4D2890DD7D00025C3D /* ViewController.swift */,
 				549C9B5D2890E20600025C3D /* SearchViewController.swift */,
+				541227D92898BD2C0064CC7A /* BoxOfficeModel.swift */,
 				549C9B4F2890DD7D00025C3D /* Main.storyboard */,
 				5445812D2897CE2000745D54 /* BeerViewController.swift */,
 				54AD1E8D28935D6000FB10ED /* LocationViewController.swift */,
@@ -226,6 +229,7 @@
 				549C9B4E2890DD7D00025C3D /* ViewController.swift in Sources */,
 				54D5F53028975FB6001CCAA3 /* UserDefaultsHelper.swift in Sources */,
 				5445812E2897CE2000745D54 /* BeerViewController.swift in Sources */,
+				541227DA2898BD2C0064CC7A /* BoxOfficeModel.swift in Sources */,
 				54507AFA28923AAE000AAA7A /* WebViewController.swift in Sources */,
 				549C9B4A2890DD7D00025C3D /* AppDelegate.swift in Sources */,
 				549C9B5E2890E20600025C3D /* SearchViewController.swift in Sources */,

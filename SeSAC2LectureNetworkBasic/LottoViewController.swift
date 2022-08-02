@@ -44,14 +44,16 @@ class LottoViewController: UIViewController {
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
-        requestLotto(number: 986)
-    
+        //앱을 띄울 때 항상 처음에 최신회차가 뜨게끔.
+        requestLotto(number: numberOfDaysBetween()/7 + 1)
+        print("회차: "+String(numberOfDaysBetween()/7 + 1))
+ 
     }
     
     func requestLotto(number: Int) {
         
         //AF: 200~299 status code 301 //validate: 유효성검증 - 네트워크 성공이 되는 범위 써주는 곳
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
         AF.request(url, method: .get).validate(statusCode: 200..<300).responseJSON { [self] response in
             switch response.result {
             case .success(let value):
@@ -81,6 +83,23 @@ class LottoViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    //최신회차 계산
+    func numberOfDaysBetween() -> Int {
+        let now = Date()
+
+        let calendar = Calendar.current
+
+        var components = DateComponents()
+        components.day = 7
+        components.month = 12
+        components.year = 2002
+        let specialDay = calendar.date(from: components)
+
+        components = calendar.dateComponents([.day], from: specialDay!, to: now)
+        return Int(components.day ?? 0)
+    
     }
 }
 
