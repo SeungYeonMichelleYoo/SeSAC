@@ -22,6 +22,16 @@ class ImageSearchViewController: UIViewController,                    UICollecti
         mainCollectionView.dataSource = self
 
         fetchImage()
+        
+        let layout = UICollectionViewFlowLayout() //인스턴스 생성(초기화)
+        let spacing: CGFloat = 8
+        let width = UIScreen.main.bounds.width - (spacing * 4)//여백 없이 디바이스 전체를 3으로 나눈다.
+        layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.2 ) //셀 크기. height에 width/3 * 1.2하는 이유는 -> 영화포스터처럼 보이게 하려고
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        mainCollectionView.collectionViewLayout = layout //설정된 값 제공해야 위에서 넣은 수치들이 반영되어 화면에 뜬다.
     }
     
     var fetchedList: [String] = []

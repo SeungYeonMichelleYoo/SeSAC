@@ -42,6 +42,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         searchBar.delegate = self
         requestBoxOffice(text: "\(makeYesterdayString())")
+        
     }
     
     //어제 날짜 가져오기
