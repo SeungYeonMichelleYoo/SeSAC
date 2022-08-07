@@ -16,8 +16,7 @@ class CastTableViewCell: UITableViewCell {
     
     @IBOutlet weak var personInfoLabel: UILabel!
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        self.translatesAutoresizingMaskIntoConstraints = false
-//    }
+    func configureCell() {
+        personImageView.clipsToBounds = true
+    }
 }

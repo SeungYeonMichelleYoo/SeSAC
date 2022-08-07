@@ -82,18 +82,18 @@ class SearchAPIManager {
             case .success(let value):
                 let json = JSON(value)
                 print(json)
-        
+                
                 var castsList: [PeopleModel] = []
                 var crewsList: [PeopleModel] = []
         
                 //MARK: - cast
                 for cast in json["cast"].arrayValue {
-                    castsList.append(PeopleModel(personName: cast["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(cast["profile_path"].stringValue)"))
+                    castsList.append(PeopleModel(personName: cast["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(cast["profile_path"].stringValue)", character: cast["character"].stringValue))
                 }
                 
                 //MARK: - crew
                 for crew in json["crew"].arrayValue {
-                    crewsList.append(PeopleModel(personName: crew["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(crew["profile_path"].stringValue)"))
+                    crewsList.append(PeopleModel(personName: crew["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(crew["profile_path"].stringValue)", character: crew["character"].stringValue))
                 }
                                 
                 peopleHandler(castsList.count, crewsList.count, castsList, crewsList)

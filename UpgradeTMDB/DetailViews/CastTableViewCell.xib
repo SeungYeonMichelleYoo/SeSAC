@@ -12,19 +12,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastTableViewCell" rowHeight="138" id="KGk-i7-Jjw" customClass="CastTableViewCell" customModule="UpgradeTMDB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="325" height="138"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="CastTableViewCell" customModule="UpgradeTMDB" customModuleProvider="target">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="325" height="138"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-k8-wsz">
-                        <rect key="frame" x="8" y="8" width="94" height="122"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="122" id="H54-QB-qhH"/>
-                            <constraint firstAttribute="width" constant="94" id="xdD-as-wtT"/>
-                        </constraints>
-                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-gI-E3L">
-                        <rect key="frame" x="118" y="40" width="191" height="49"/>
+                        <rect key="frame" x="118" y="44.5" width="191" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf5-Ci-IU2">
                                 <rect key="frame" x="0.0" y="0.0" width="191" height="20.5"/>
@@ -32,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-x8-Et5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-x8-Et5">
                                 <rect key="frame" x="0.0" y="28.5" width="191" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -45,13 +38,22 @@
                             <constraint firstAttribute="trailing" secondItem="QEI-x8-Et5" secondAttribute="trailing" id="fNT-kF-YDG"/>
                         </constraints>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-k8-wsz">
+                        <rect key="frame" x="8" y="8" width="94" height="122"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="ClY-6T-1eQ"/>
+                            <constraint firstAttribute="height" constant="122" id="H54-QB-qhH"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="122" id="MZl-zA-mkq"/>
+                            <constraint firstAttribute="width" constant="94" id="xdD-as-wtT"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="XQh-k8-wsz" secondAttribute="bottom" constant="8" id="Jwf-my-4gh"/>
-                    <constraint firstItem="TFh-gI-E3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="KFr-w9-Hp7"/>
                     <constraint firstAttribute="trailing" secondItem="TFh-gI-E3L" secondAttribute="trailing" constant="16" id="Qf7-3n-AvU"/>
                     <constraint firstItem="XQh-k8-wsz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ezN-tX-Rvi"/>
                     <constraint firstItem="XQh-k8-wsz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pbu-D5-bfY"/>
+                    <constraint firstItem="TFh-gI-E3L" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="plg-85-kK0"/>
                     <constraint firstItem="TFh-gI-E3L" firstAttribute="leading" secondItem="XQh-k8-wsz" secondAttribute="trailing" constant="16" id="woh-Om-om3"/>
                 </constraints>
             </tableViewCellContentView>

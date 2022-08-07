@@ -10,4 +10,5 @@ import Foundation
 struct PeopleModel {
     let personName: String
     let personImage: String
+    let character: String
 }

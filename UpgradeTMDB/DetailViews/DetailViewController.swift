@@ -9,7 +9,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var posterImageView: UIImageView!
@@ -24,13 +23,22 @@ class DetailViewController: UIViewController {
         
         //3] 값 전달 받음
         movieTitleLabel.text = "\(movieData.movieTitle)"
-        posterImageView.image = UIImage(named: "\(movieData.posterImage)")
-    
+        let posterImageUrl = URL(string: movieData.posterImage)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: posterImageUrl!)
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.posterImageView.image = UIImage(data: data!)
+                }
+            }
+        }
         mainTableView.delegate = self
         mainTableView.dataSource = self
 
         mainTableView.register(UINib(nibName: OverviewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.identifier)
         mainTableView.register(UINib(nibName: CastTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.identifier)
+        
+    
     }
 }
 
@@ -69,7 +77,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             return 150
         default:
-            return 80
+            return UITableView.automaticDimension
         }
     }
 
@@ -83,6 +91,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let castViewCell = mainTableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
             
             castViewCell.personNameLabel.text = "\(movieData.castedList[indexPath.row].personName)"
+            castViewCell.personInfoLabel.text = "\(movieData.castedList[indexPath.row].character)"
             
             let personimageUrl = URL(string: movieData.castedList[indexPath.row].personImage)
             DispatchQueue.global().async {
@@ -93,20 +102,25 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
+            castViewCell.configureCell()
             return castViewCell
             
         } else {
             guard let castViewCell = mainTableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
             
             castViewCell.personNameLabel.text = "\(movieData.crewList[indexPath.row].personName)"
+            castViewCell.personInfoLabel.text = "\(movieData.crewList[indexPath.row].character)"
             
             let personimageUrl = URL(string: movieData.crewList[indexPath.row].personImage)
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: personimageUrl!)
-                DispatchQueue.main.async {
-                    castViewCell.personImageView.image = UIImage(data: data!)
+                if data != nil {
+                    DispatchQueue.main.async {
+                        castViewCell.personImageView.image = UIImage(data: data!)
+                    }
                 }
             }
+            castViewCell.configureCell()
             return castViewCell
         }
     }
