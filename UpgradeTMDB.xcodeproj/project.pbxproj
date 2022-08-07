@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AABC1289E5C4300D3F196 /* PeopleModel.swift */; };
 		5492CF0D289BA47500324766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5492CF0C289BA47500324766 /* AppDelegate.swift */; };
 		5492CF0F289BA47500324766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5492CF0E289BA47500324766 /* SceneDelegate.swift */; };
 		5492CF11289BA47500324766 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5492CF10289BA47500324766 /* SearchViewController.swift */; };
@@ -17,9 +18,14 @@
 		5492CF23289BA53300324766 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5492CF22289BA53300324766 /* APIKey.swift */; };
 		5492CF27289BA5B900324766 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5492CF26289BA5B900324766 /* Alamofire */; };
 		5492CF2A289BA5D800324766 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5492CF29289BA5D800324766 /* SwiftyJSON */; };
+		54C1508E289CDA7C0075E0AA /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1508C289CDA7C0075E0AA /* MainCollectionViewCell.swift */; };
+		54C1508F289CDA7C0075E0AA /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54C1508D289CDA7C0075E0AA /* MainCollectionViewCell.xib */; };
+		54DAB98D289D00FA008D8B75 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DAB98C289D00FA008D8B75 /* MovieModel.swift */; };
+		54DAB990289D0DAA008D8B75 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DAB98F289D0DAA008D8B75 /* SearchAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		545AABC1289E5C4300D3F196 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		5492CF09289BA47500324766 /* UpgradeTMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpgradeTMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5492CF0C289BA47500324766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5492CF0E289BA47500324766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +36,10 @@
 		5492CF1A289BA47600324766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5492CF20289BA4A100324766 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5492CF22289BA53300324766 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		54C1508C289CDA7C0075E0AA /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		54C1508D289CDA7C0075E0AA /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		54DAB98C289D00FA008D8B75 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		54DAB98F289D0DAA008D8B75 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,14 +75,19 @@
 		5492CF0B289BA47500324766 /* UpgradeTMDB */ = {
 			isa = PBXGroup;
 			children = (
+				54DAB98E289D0D8B008D8B75 /* APIManager */,
 				5492CF24289BA54700324766 /* Key */,
 				5492CF0C289BA47500324766 /* AppDelegate.swift */,
 				5492CF0E289BA47500324766 /* SceneDelegate.swift */,
 				5492CF10289BA47500324766 /* SearchViewController.swift */,
 				5492CF12289BA47500324766 /* Main.storyboard */,
+				54C1508C289CDA7C0075E0AA /* MainCollectionViewCell.swift */,
+				54C1508D289CDA7C0075E0AA /* MainCollectionViewCell.xib */,
 				5492CF15289BA47600324766 /* Assets.xcassets */,
 				5492CF17289BA47600324766 /* LaunchScreen.storyboard */,
 				5492CF1A289BA47600324766 /* Info.plist */,
+				54DAB98C289D00FA008D8B75 /* MovieModel.swift */,
+				545AABC1289E5C4300D3F196 /* PeopleModel.swift */,
 			);
 			path = UpgradeTMDB;
 			sourceTree = "<group>";
@@ -83,6 +98,14 @@
 				5492CF22289BA53300324766 /* APIKey.swift */,
 			);
 			path = Key;
+			sourceTree = "<group>";
+		};
+		54DAB98E289D0D8B008D8B75 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				54DAB98F289D0DAA008D8B75 /* SearchAPIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +177,7 @@
 				5492CF21289BA4A100324766 /* .gitignore in Resources */,
 				5492CF19289BA47600324766 /* LaunchScreen.storyboard in Resources */,
 				5492CF16289BA47600324766 /* Assets.xcassets in Resources */,
+				54C1508F289CDA7C0075E0AA /* MainCollectionViewCell.xib in Resources */,
 				5492CF14289BA47500324766 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DAB990289D0DAA008D8B75 /* SearchAPIManager.swift in Sources */,
+				54DAB98D289D00FA008D8B75 /* MovieModel.swift in Sources */,
+				545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */,
 				5492CF11289BA47500324766 /* SearchViewController.swift in Sources */,
 				5492CF0D289BA47500324766 /* AppDelegate.swift in Sources */,
+				54C1508E289CDA7C0075E0AA /* MainCollectionViewCell.swift in Sources */,
 				5492CF23289BA53300324766 /* APIKey.swift in Sources */,
 				5492CF0F289BA47500324766 /* SceneDelegate.swift in Sources */,
 			);
@@ -315,6 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UpgradeTMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -342,6 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UpgradeTMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

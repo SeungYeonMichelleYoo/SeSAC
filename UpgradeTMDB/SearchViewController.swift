@@ -7,8 +7,42 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class SearchViewController: UIViewController {
     
+    
+    @IBOutlet weak var maincollectionView: UICollectionView!
+
+    var fetchedList: [MovieModel] = []
+    
+    //네트워크 요청할 시작 페이지 넘버
+    var startPage = 1
+    var totalCount = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        makeSearchBar()
+        fetchImage(query: "")
+        maincollectionView.delegate = self
+        maincollectionView.dataSource = self
+        
+        maincollectionView.register(UINib(nibName: MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
+        
+        let layout = UICollectionViewFlowLayout() //인스턴스 생성(초기화)
+        let spacing: CGFloat = 8
+        let width = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: width, height: width * 1.3 ) //셀 크기
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        maincollectionView.collectionViewLayout = layout //설정된 값 제공해야 위에서 넣은 수치들이 반영되어 화면에 뜬다.
+        
+    }
+
     func makeSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Search Movie"
@@ -19,13 +53,22 @@ class SearchViewController: UIViewController {
         self.navigationItem.title = "Movie"
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-        makeSearchBar()
+    func fetchImage(query: String) {
+        //show
+        SearchAPIManager.shared.fetchData(query: query, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount //페이지네이션 관련
+            self.fetchedList.append(contentsOf: list)
+            
+            DispatchQueue.main.async {
+                print("reloaded")
+              self.maincollectionView.reloadData()
+                
+                //dismiss
+            }
+        }
+        
     }
-
-
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -40,4 +83,26 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
     }
+}
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchedList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else { return MainCollectionViewCell() }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier,
+                                                      for: indexPath) as! MainCollectionViewCell
+        cell.posterImageView.image = nil
+        
+        cell.infoData(indexPath: indexPath, list: fetchedList)
+        cell.configureLabel()
+        cell.configureBigView()
+        cell.configureButton()
+        
+        return cell
+    }
+    
+    
 }
