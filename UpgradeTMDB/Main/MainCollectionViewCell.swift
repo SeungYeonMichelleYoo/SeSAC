@@ -79,14 +79,26 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     
     func infoData(indexPath: IndexPath, list: [MovieModel]) {
-        self.releaseDateLabel.text = list[indexPath.item].releasedDate
-        self.rateLabel.text = "\(list[indexPath.item].rate)"
-        self.movieTitleLabel.text = list[indexPath.item].movieTitle
-        self.personLabel.text = list[indexPath.item].casted.joined(separator: ",")
-        self.genreLabel.text = list[indexPath.item].genre
-        let imageUrl = URL(string: list[indexPath.item].posterImage)
+        let movie = list[indexPath.item] //MovieModel을 가져옴
+        self.releaseDateLabel.text = movie.releasedDate
+        self.rateLabel.text = "\(movie.rate)"
+        self.movieTitleLabel.text = movie.movieTitle
+        var peopleNameInLine = ""
+        var nameList: [String] = []
+//        for i in 0...movie.castedList.count {
+//            nameList.append(movie.castedList[i])
+//        }
+        for cast in movie.castedList {
+            nameList.append(cast.personName)
+        }
+        for crew in movie.crewList {
+            nameList.append(crew.personName)
+        }
+        self.personLabel.text = nameList.joined(separator: ",")
+        self.genreLabel.text = movie.genre
+        let posterimageUrl = URL(string: movie.posterImage)
             DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageUrl!)
+                let data = try? Data(contentsOf: posterimageUrl!)
             DispatchQueue.main.async {
                 self.posterImageView.image = UIImage(data: data!)
                 self.posterImageView.contentMode = .scaleAspectFill

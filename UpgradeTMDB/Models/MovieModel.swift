@@ -14,6 +14,7 @@ struct MovieModel {
     let posterImage: String
     let releasedDate: String
     let overview: String
-    let casted: [String]
+    let castedList: [PeopleModel] //= [new PeopleModel(personName: personName, personImage: personImage), new PeopleModel(personName: personName2)
+    let crewList: [PeopleModel]
 }
 

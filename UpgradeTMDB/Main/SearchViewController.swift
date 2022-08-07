@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
        
         makeSearchBar()
         fetchImage(query: "")
@@ -30,7 +31,10 @@ class SearchViewController: UIViewController {
         maincollectionView.dataSource = self
         
         maincollectionView.register(UINib(nibName: MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
-        
+                
+    }
+    
+    func configureCollectionView() {
         let layout = UICollectionViewFlowLayout() //인스턴스 생성(초기화)
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width
@@ -40,7 +44,6 @@ class SearchViewController: UIViewController {
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         maincollectionView.collectionViewLayout = layout //설정된 값 제공해야 위에서 넣은 수치들이 반영되어 화면에 뜬다.
-        
     }
 
     func makeSearchBar() {
@@ -102,6 +105,15 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.configureButton()
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("clicked")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        //2] SearchVC->DetailVC 값 전달
+        vc.movieData = self.fetchedList[indexPath.item]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

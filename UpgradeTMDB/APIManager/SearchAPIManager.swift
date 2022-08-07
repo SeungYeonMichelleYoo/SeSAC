@@ -18,7 +18,7 @@ class SearchAPIManager {
     private init() { }
 
     typealias completionHandler = (Int, [MovieModel]) -> Void
-    typealias peopleHandler = (Int, [String]) -> Void
+    typealias peopleHandler = (Int, Int, [PeopleModel], [PeopleModel]) -> Void
     
     //non-escaping -> escaping
     func fetchData(query: String, startPage: Int, completionHandler: @escaping completionHandler) {
@@ -41,37 +41,35 @@ class SearchAPIManager {
                     let movieTitle = movie["title"].stringValue
                     let rate = movie["vote_average"].doubleValue
                     let releasedDate = movie["release_date"].stringValue
-                    let posterImage = "\(EndPoint.imageURL)\(movie["poster_path"].stringValue)"
+                    let posterImage = "\(EndPoint.posterimageURL)\(movie["poster_path"].stringValue)"
                     let overview = movie["overview"].stringValue
                     var genreList: [String] = []
-                    var castList: [String] = []
+                    var castsList: [PeopleModel] = []
+                    var crewsList: [PeopleModel] = []
                     for genreKey in movie["genre_ids"].arrayValue {
                         genreList.append("#"+GENRE[String(genreKey.intValue)]!)
                     }
                     let id = movie["id"].stringValue
-                    self.peopleFetch(id: id) { totalCount2, list2 in
+                    self.peopleFetch(id: id) { castCount, crewCount, casts, crews in
                         
-                        castList.append(contentsOf: list2)
+                        castsList.append(contentsOf: casts)
+                        crewsList.append(contentsOf: crews)
                         
                         DispatchQueue.main.async {
                             counter = counter + 1
-                            let data = MovieModel(movieTitle: movieTitle, genre: genreList.joined(separator: " "), rate: rate, posterImage: posterImage, releasedDate: releasedDate, overview: overview, casted: castList)
+                            let data = MovieModel(movieTitle: movieTitle, genre: genreList.joined(separator: " "), rate: rate, posterImage: posterImage, releasedDate: releasedDate, overview: overview, castedList: castsList, crewList: crewsList )
                             list.append(data)
                             
                             if counter == totalCount {
                                 completionHandler(list.count, list)
                             }
-
                         }
-
                     }
                 }
                 
                 case .failure(let error):
                 print(error)
-            }
-                       
-            
+            }                    
         }
     }
     
@@ -85,20 +83,25 @@ class SearchAPIManager {
                 let json = JSON(value)
                 print(json)
         
-                var peopleList: [String] = []
+                var castsList: [PeopleModel] = []
+                var crewsList: [PeopleModel] = []
         
-                let people = json["cast"].arrayValue //[0]["name"].stringValue
-                for person in people {
-                    peopleList.append(person["name"].stringValue)
+                //MARK: - cast
+                for cast in json["cast"].arrayValue {
+                    castsList.append(PeopleModel(personName: cast["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(cast["profile_path"].stringValue)"))
                 }
-                //print("People: " + people)
-                let peopletotalCount = peopleList.count
                 
-                peopleHandler(peopleList.count, peopleList)
+                //MARK: - crew
+                for crew in json["crew"].arrayValue {
+                    crewsList.append(PeopleModel(personName: crew["name"].stringValue, personImage: "https://image.tmdb.org/t/p/w500/\(crew["profile_path"].stringValue)"))
+                }
+                                
+                peopleHandler(castsList.count, crewsList.count, castsList, crewsList)
                 
             case .failure(let error):
                 print(error)
             }
         }
     }
+    
 }
