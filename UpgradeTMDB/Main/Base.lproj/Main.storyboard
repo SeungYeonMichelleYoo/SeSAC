@@ -136,8 +136,76 @@
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="41.517857142857139"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="iLC-ei-l5x">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Eht-xk-7Gi" customClass="WebViewController" customModule="UpgradeTMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Qu-Fx-LTP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vug-1T-DbK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-P7-Z6T">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8Dt-jh-fv2"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" image="xmark" catalog="system" id="m5q-7E-RKC"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="K2m-Zt-1K4"/>
+                                    <barButtonItem title="Item" image="arrow.backward" catalog="system" id="ssh-gX-dUg">
+                                        <connections>
+                                            <action selector="goBackButtonClicked:" destination="Eht-xk-7Gi" id="xZf-ez-Gyo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="YhH-u8-uo1"/>
+                                    <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="37P-ij-KaR">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="Eht-xk-7Gi" id="71X-Bk-XL5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="bKu-1K-esQ"/>
+                                    <barButtonItem image="arrow.forward" catalog="system" id="CWW-o0-YIg">
+                                        <connections>
+                                            <action selector="goForwardButtonClicked:" destination="Eht-xk-7Gi" id="lPC-VB-AdM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BO1-QK-Yen"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vug-1T-DbK" firstAttribute="top" secondItem="BO1-QK-Yen" secondAttribute="top" id="7bg-Jj-V6z"/>
+                            <constraint firstItem="vug-1T-DbK" firstAttribute="leading" secondItem="BO1-QK-Yen" secondAttribute="leading" id="BPk-8T-r6w"/>
+                            <constraint firstItem="BO1-QK-Yen" firstAttribute="bottom" secondItem="1HK-P7-Z6T" secondAttribute="bottom" id="Be2-M1-DhA"/>
+                            <constraint firstItem="1HK-P7-Z6T" firstAttribute="top" secondItem="vug-1T-DbK" secondAttribute="bottom" id="Dnt-Mp-3CP"/>
+                            <constraint firstItem="1HK-P7-Z6T" firstAttribute="trailing" secondItem="BO1-QK-Yen" secondAttribute="trailing" id="FfX-CT-K5b"/>
+                            <constraint firstItem="vug-1T-DbK" firstAttribute="trailing" secondItem="BO1-QK-Yen" secondAttribute="trailing" id="Ms7-VE-KLU"/>
+                            <constraint firstItem="1HK-P7-Z6T" firstAttribute="leading" secondItem="BO1-QK-Yen" secondAttribute="leading" id="s9Z-mJ-4N0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="vug-1T-DbK" id="zgA-sf-8dd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01o-k4-KbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2633.3333333333335" y="38.839285714285715"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

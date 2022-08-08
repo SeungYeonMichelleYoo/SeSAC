@@ -34,11 +34,10 @@ class DetailViewController: UIViewController {
         }
         mainTableView.delegate = self
         mainTableView.dataSource = self
-
+        
         mainTableView.register(UINib(nibName: OverviewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.identifier)
         mainTableView.register(UINib(nibName: CastTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastTableViewCell.identifier)
-        
-    
+           
     }
 }
 

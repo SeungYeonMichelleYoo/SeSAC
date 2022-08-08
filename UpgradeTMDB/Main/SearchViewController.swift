@@ -104,7 +104,27 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.configureBigView()
         cell.configureButton()
         
+        //MARK: - 링크버튼 클릭시 유튜브 링크로 이동
+        cell.linkButton.tag = indexPath.item
+        cell.linkButton.addTarget(self, action: #selector(linkButtonClicked(sender: )), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func linkButtonClicked(sender: UIButton) {
+//        print("\(sender.tag)번째 버튼 클릭!")
+        //유튜브 웹뷰로 화면 전환
+        //1. 스토리보드 파일찾기
+        let presentStoryboard = UIStoryboard(name: "Main", bundle: nil) //nil:기본 위치로 가져옴
+        //2. 스토리보드 내에 있는 뷰 컨트롤러 가져오기
+        let vc = presentStoryboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.destinationURL = "https://www.youtube.com/watch?v=\(fetchedList[sender.tag].youtubeKey)"
+        //2.5. present할 때의 화면 전환 방식 설정 - fullscreen
+        vc.modalPresentationStyle = .fullScreen
+        //3. 화면 전환
+        self.present(vc, animated: true)
+        
+//        url = "https://www.youtube.com/watch?v=\(key)"
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

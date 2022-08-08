@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54433EC128A1175E00F4CCFC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433EC028A1175E00F4CCFC /* WebViewController.swift */; };
 		545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AABC1289E5C4300D3F196 /* PeopleModel.swift */; };
 		546EDFF4289F90B60016D7BC /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546EDFF2289F90B60016D7BC /* CastTableViewCell.swift */; };
 		546EDFF5289F90B60016D7BC /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546EDFF3289F90B60016D7BC /* CastTableViewCell.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54433EC028A1175E00F4CCFC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		545AABC1289E5C4300D3F196 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		546EDFF2289F90B60016D7BC /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		546EDFF3289F90B60016D7BC /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				5492920F289F6EA000CC2DDA /* DetailViewController.swift */,
+				54433EC028A1175E00F4CCFC /* WebViewController.swift */,
 				546EDFF3289F90B60016D7BC /* CastTableViewCell.xib */,
 				546EDFF2289F90B60016D7BC /* CastTableViewCell.swift */,
 				546EDFF7289F918A0016D7BC /* OverviewTableViewCell.swift */,
@@ -237,6 +240,7 @@
 				545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */,
 				5492CF11289BA47500324766 /* SearchViewController.swift in Sources */,
 				5492CF0D289BA47500324766 /* AppDelegate.swift in Sources */,
+				54433EC128A1175E00F4CCFC /* WebViewController.swift in Sources */,
 				546EDFF4289F90B60016D7BC /* CastTableViewCell.swift in Sources */,
 				54C1508E289CDA7C0075E0AA /* MainCollectionViewCell.swift in Sources */,
 				5492CF23289BA53300324766 /* APIKey.swift in Sources */,

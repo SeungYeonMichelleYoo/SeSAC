@@ -19,6 +19,7 @@ class SearchAPIManager {
 
     typealias completionHandler = (Int, [MovieModel]) -> Void
     typealias peopleHandler = (Int, Int, [PeopleModel], [PeopleModel]) -> Void
+    typealias youtubeHandler = (String) -> Void
     
     //non-escaping -> escaping
     func fetchData(query: String, startPage: Int, completionHandler: @escaping completionHandler) {
@@ -50,18 +51,22 @@ class SearchAPIManager {
                         genreList.append("#"+GENRE[String(genreKey.intValue)]!)
                     }
                     let id = movie["id"].stringValue
-                    self.peopleFetch(id: id) { castCount, crewCount, casts, crews in
-                        
-                        castsList.append(contentsOf: casts)
-                        crewsList.append(contentsOf: crews)
                         
                         DispatchQueue.main.async {
-                            counter = counter + 1
-                            let data = MovieModel(movieTitle: movieTitle, genre: genreList.joined(separator: " "), rate: rate, posterImage: posterImage, releasedDate: releasedDate, overview: overview, castedList: castsList, crewList: crewsList )
-                            list.append(data)
-                            
-                            if counter == totalCount {
-                                completionHandler(list.count, list)
+                            self.peopleFetch(id: id) { castCount, crewCount, casts, crews in
+                                
+                                castsList.append(contentsOf: casts)
+                                crewsList.append(contentsOf: crews)
+                                
+                            self.youtubeFetch(id: id) { youtubeKey in
+                                counter = counter + 1
+                                
+                                let data = MovieModel(movieTitle: movieTitle, genre: genreList.joined(separator: " "), rate: rate, posterImage: posterImage, releasedDate: releasedDate, overview: overview, castedList: castsList, crewList: crewsList, youtubeKey: youtubeKey)
+                                list.append(data)
+                                
+                                if counter == totalCount {
+                                    completionHandler(list.count, list)
+                                }
                             }
                         }
                     }
@@ -97,6 +102,25 @@ class SearchAPIManager {
                 }
                                 
                 peopleHandler(castsList.count, crewsList.count, castsList, crewsList)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func youtubeFetch(id: String, youtubeHandler: @escaping youtubeHandler) {
+        let youtubeUrl = "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=aa647781e526d18186b74e24132beb08"
+
+        AF.request(youtubeUrl, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                let youtube = json["results"].arrayValue[0]["key"].stringValue
+               
+                youtubeHandler(youtube)
                 
             case .failure(let error):
                 print(error)
