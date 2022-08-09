@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="UpgradeTMDB" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="VB9-sl-XkI" id="mY2-vh-I7E"/>
+                <outlet property="posterImageView" destination="JfT-gk-ezB" id="a5r-Za-Usj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-gk-ezB">
+                    <rect key="frame" x="8" y="8" width="84" height="114"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VB9-sl-XkI">
+                    <rect key="frame" x="29" y="54.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VB9-sl-XkI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="41y-7N-UrR"/>
+                <constraint firstItem="JfT-gk-ezB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Q5d-6y-N6b"/>
+                <constraint firstItem="JfT-gk-ezB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="TeP-Ps-h7A"/>
+                <constraint firstItem="VB9-sl-XkI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cbb-43-Coj"/>
+                <constraint firstAttribute="bottom" secondItem="JfT-gk-ezB" secondAttribute="bottom" constant="8" id="qcv-Kg-Loj"/>
+                <constraint firstAttribute="trailing" secondItem="JfT-gk-ezB" secondAttribute="trailing" constant="8" id="yiW-gb-x97"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="150.72463768115944" y="-160.04464285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
