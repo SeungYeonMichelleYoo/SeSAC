@@ -9,6 +9,7 @@ import UIKit
 
 class NetflixViewController: UIViewController {
     
+    @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var mainTableView: UITableView!
     
     let color: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black]
@@ -28,6 +29,10 @@ class NetflixViewController: UIViewController {
 
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        
+        contentCollectionView!.delegate = self
+        contentCollectionView!.dataSource = self
+       
     }
 }
 
