@@ -10,6 +10,9 @@
 		5439D6C728A2A5D400858034 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5439D6C628A2A5D400858034 /* CardView.xib */; };
 		5439D6C928A2A5FC00858034 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5439D6C828A2A5FC00858034 /* CardView.swift */; };
 		54433EC128A1175E00F4CCFC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54433EC028A1175E00F4CCFC /* WebViewController.swift */; };
+		544C4D7628A3172600029D01 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7528A3172600029D01 /* MainTableViewCell.swift */; };
+		544C4D7928A31AAC00029D01 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7728A31AAC00029D01 /* CardCollectionViewCell.swift */; };
+		544C4D7A28A31AAC00029D01 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544C4D7828A31AAC00029D01 /* CardCollectionViewCell.xib */; };
 		545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AABC1289E5C4300D3F196 /* PeopleModel.swift */; };
 		546EDFF4289F90B60016D7BC /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546EDFF2289F90B60016D7BC /* CastTableViewCell.swift */; };
 		546EDFF5289F90B60016D7BC /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546EDFF3289F90B60016D7BC /* CastTableViewCell.xib */; };
@@ -38,6 +41,9 @@
 		5439D6C628A2A5D400858034 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		5439D6C828A2A5FC00858034 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		54433EC028A1175E00F4CCFC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		544C4D7528A3172600029D01 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		544C4D7728A31AAC00029D01 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		544C4D7828A31AAC00029D01 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		545AABC1289E5C4300D3F196 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		546EDFF2289F90B60016D7BC /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		546EDFF3289F90B60016D7BC /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				549C547128A23D3B00FC3EFC /* NetflixViewController.swift */,
 				5439D6C828A2A5FC00858034 /* CardView.swift */,
 				5439D6C628A2A5D400858034 /* CardView.xib */,
+				544C4D7528A3172600029D01 /* MainTableViewCell.swift */,
+				544C4D7728A31AAC00029D01 /* CardCollectionViewCell.swift */,
+				544C4D7828A31AAC00029D01 /* CardCollectionViewCell.xib */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 				549C547028A23D1C00FC3EFC /* Netflix.storyboard in Resources */,
 				5492CF16289BA47600324766 /* Assets.xcassets in Resources */,
 				546EDFFA289F918A0016D7BC /* OverviewTableViewCell.xib in Resources */,
+				544C4D7A28A31AAC00029D01 /* CardCollectionViewCell.xib in Resources */,
 				54C1508F289CDA7C0075E0AA /* MainCollectionViewCell.xib in Resources */,
 				5492CF14289BA47500324766 /* Main.storyboard in Resources */,
 				5439D6C728A2A5D400858034 /* CardView.xib in Resources */,
@@ -259,9 +269,11 @@
 				546EDFF9289F918A0016D7BC /* OverviewTableViewCell.swift in Sources */,
 				54929210289F6EA000CC2DDA /* DetailViewController.swift in Sources */,
 				54DAB990289D0DAA008D8B75 /* SearchAPIManager.swift in Sources */,
+				544C4D7628A3172600029D01 /* MainTableViewCell.swift in Sources */,
 				54DAB98D289D00FA008D8B75 /* MovieModel.swift in Sources */,
 				545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */,
 				5492CF11289BA47500324766 /* SearchViewController.swift in Sources */,
+				544C4D7928A31AAC00029D01 /* CardCollectionViewCell.swift in Sources */,
 				5492CF0D289BA47500324766 /* AppDelegate.swift in Sources */,
 				54433EC128A1175E00F4CCFC /* WebViewController.swift in Sources */,
 				546EDFF4289F90B60016D7BC /* CastTableViewCell.swift in Sources */,
@@ -420,7 +432,7 @@
 				INFOPLIST_FILE = UpgradeTMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Netflix;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,7 +460,7 @@
 				INFOPLIST_FILE = UpgradeTMDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Netflix;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
