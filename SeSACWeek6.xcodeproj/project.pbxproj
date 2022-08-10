@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		544C4D7D28A3307D00029D01 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */; };
+		544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */; };
+		547F61BC28A1E040002EA150 /* SameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61BB28A1E040002EA150 /* SameButtons.swift */; };
+		547F61BE28A1E5FC002EA150 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547F61BD28A1E5FC002EA150 /* CardView.xib */; };
+		547F61C028A1E649002EA150 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61BF28A1E649002EA150 /* CardView.swift */; };
+		547F61C328A1F37B002EA150 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61C128A1F37B002EA150 /* CardCollectionViewCell.swift */; };
+		547F61C428A1F37B002EA150 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547F61C228A1F37B002EA150 /* CardCollectionViewCell.xib */; };
+		547F61C628A1F637002EA150 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61C528A1F637002EA150 /* MainViewController.swift */; };
+		547F61C828A1FC61002EA150 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61C728A1FC61002EA150 /* MainTableViewCell.swift */; };
 		54EC181D28A08FEF003EF5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC181C28A08FEF003EF5EE /* AppDelegate.swift */; };
 		54EC181F28A08FEF003EF5EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */; };
 		54EC182128A08FEF003EF5EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC182028A08FEF003EF5EE /* ViewController.swift */; };
@@ -16,9 +25,24 @@
 		54EC183228A09035003EF5EE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 54EC183128A09035003EF5EE /* SwiftyJSON */; };
 		54EC183528A09045003EF5EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 54EC183428A09045003EF5EE /* Alamofire */; };
 		54EC183828A09053003EF5EE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 54EC183728A09053003EF5EE /* Kingfisher */; };
+		54EC183B28A0913C003EF5EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 54EC183A28A0913C003EF5EE /* .gitignore */; };
+		54EC183D28A0914F003EF5EE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC183C28A0914F003EF5EE /* APIKey.swift */; };
+		54EC184028A09499003EF5EE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC183F28A09499003EF5EE /* Endpoint.swift */; };
+		54EC184228A09512003EF5EE /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC184128A09512003EF5EE /* URL+Extension.swift */; };
+		54EC184428A0A789003EF5EE /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC184328A0A789003EF5EE /* KakaoAPIManager.swift */; };
+		54EC184828A0AC30003EF5EE /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC184728A0AC30003EF5EE /* ClosureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		547F61BB28A1E040002EA150 /* SameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameButtons.swift; sourceTree = "<group>"; };
+		547F61BD28A1E5FC002EA150 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		547F61BF28A1E649002EA150 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		547F61C128A1F37B002EA150 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardCollectionViewCell.swift; path = SeSACWeek6/CardCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		547F61C228A1F37B002EA150 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CardCollectionViewCell.xib; path = SeSACWeek6/CardCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		547F61C528A1F637002EA150 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		547F61C728A1FC61002EA150 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		54EC181928A08FEF003EF5EE /* SeSACWeek6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EC181C28A08FEF003EF5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +51,12 @@
 		54EC182528A08FF1003EF5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54EC182828A08FF1003EF5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54EC182A28A08FF1003EF5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54EC183A28A0913C003EF5EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		54EC183C28A0914F003EF5EE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		54EC183F28A09499003EF5EE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		54EC184128A09512003EF5EE /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		54EC184328A0A789003EF5EE /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
+		54EC184728A0AC30003EF5EE /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +73,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		544C4D7B28A3306500029D01 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		547F61BA28A1DFE2002EA150 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				547F61C128A1F37B002EA150 /* CardCollectionViewCell.swift */,
+				547F61C228A1F37B002EA150 /* CardCollectionViewCell.xib */,
+				547F61BB28A1E040002EA150 /* SameButtons.swift */,
+				547F61BD28A1E5FC002EA150 /* CardView.xib */,
+				547F61BF28A1E649002EA150 /* CardView.swift */,
+				547F61C728A1FC61002EA150 /* MainTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		54EC181028A08FEF003EF5EE = {
 			isa = PBXGroup;
 			children = (
+				54EC183A28A0913C003EF5EE /* .gitignore */,
 				54EC181B28A08FEF003EF5EE /* SeSACWeek6 */,
 				54EC181A28A08FEF003EF5EE /* Products */,
 			);
@@ -62,15 +114,32 @@
 		54EC181B28A08FEF003EF5EE /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				544C4D7B28A3306500029D01 /* Protocol */,
+				547F61BA28A1DFE2002EA150 /* View */,
+				54EC183E28A09484003EF5EE /* Network */,
 				54EC181C28A08FEF003EF5EE /* AppDelegate.swift */,
 				54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */,
 				54EC182028A08FEF003EF5EE /* ViewController.swift */,
 				54EC182228A08FEF003EF5EE /* Main.storyboard */,
+				547F61C528A1F637002EA150 /* MainViewController.swift */,
 				54EC182528A08FF1003EF5EE /* Assets.xcassets */,
 				54EC182728A08FF1003EF5EE /* LaunchScreen.storyboard */,
 				54EC182A28A08FF1003EF5EE /* Info.plist */,
+				54EC183C28A0914F003EF5EE /* APIKey.swift */,
+				54EC184728A0AC30003EF5EE /* ClosureViewController.swift */,
 			);
 			path = SeSACWeek6;
+			sourceTree = "<group>";
+		};
+		54EC183E28A09484003EF5EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				54EC183F28A09499003EF5EE /* Endpoint.swift */,
+				54EC184128A09512003EF5EE /* URL+Extension.swift */,
+				54EC184328A0A789003EF5EE /* KakaoAPIManager.swift */,
+				544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +210,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EC183B28A0913C003EF5EE /* .gitignore in Resources */,
 				54EC182928A08FF1003EF5EE /* LaunchScreen.storyboard in Resources */,
+				547F61BE28A1E5FC002EA150 /* CardView.xib in Resources */,
 				54EC182628A08FF1003EF5EE /* Assets.xcassets in Resources */,
+				547F61C428A1F37B002EA150 /* CardCollectionViewCell.xib in Resources */,
 				54EC182428A08FEF003EF5EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,9 +226,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547F61C828A1FC61002EA150 /* MainTableViewCell.swift in Sources */,
 				54EC182128A08FEF003EF5EE /* ViewController.swift in Sources */,
 				54EC181D28A08FEF003EF5EE /* AppDelegate.swift in Sources */,
+				54EC184828A0AC30003EF5EE /* ClosureViewController.swift in Sources */,
+				547F61C628A1F637002EA150 /* MainViewController.swift in Sources */,
+				547F61C328A1F37B002EA150 /* CardCollectionViewCell.swift in Sources */,
+				547F61BC28A1E040002EA150 /* SameButtons.swift in Sources */,
+				547F61C028A1E649002EA150 /* CardView.swift in Sources */,
+				54EC183D28A0914F003EF5EE /* APIKey.swift in Sources */,
 				54EC181F28A08FEF003EF5EE /* SceneDelegate.swift in Sources */,
+				54EC184428A0A789003EF5EE /* KakaoAPIManager.swift in Sources */,
+				544C4D7D28A3307D00029D01 /* ReusableViewProtocol.swift in Sources */,
+				54EC184028A09499003EF5EE /* Endpoint.swift in Sources */,
+				544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */,
+				54EC184228A09512003EF5EE /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACWeek6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -330,6 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACWeek6/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
