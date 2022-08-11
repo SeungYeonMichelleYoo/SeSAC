@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NetflixViewController: UIViewController {
     
@@ -23,11 +24,18 @@ class NetflixViewController: UIViewController {
         [Int](81...90)
     ]
     
+    var movieList: [[String]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        
+        GenreAPIManager.shared.requestImage { value in //value = posterList
+            self.movieList = value
+            self.mainTableView.reloadData()
+        }
        
     }
 }
@@ -36,7 +44,7 @@ class NetflixViewController: UIViewController {
 extension NetflixViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return numberList.count
+        return movieList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +55,8 @@ extension NetflixViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = .black
-        cell.titleLabel.text = "넷플릭스 장르별 컨텐츠"
+        let genreTitles = [String] (GenreAPIManager.shared.genreList.values)
+        cell.titleLabel.text = "\(genreTitles[indexPath.section]) 장르 추천"
         cell.titleLabel.textColor = .white
         cell.contentCollectionView.backgroundColor = .lightGray
         
@@ -73,7 +82,7 @@ extension NetflixViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: -CollectionView
 extension NetflixViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberList[collectionView.tag].count
+        return movieList[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,8 +90,13 @@ extension NetflixViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         
             cell.cardView.posterImageView.backgroundColor = .systemIndigo
+            cell.cardView.posterImageView.contentMode = .scaleToFill
             cell.cardView.contentLabel.textColor = .white
-            cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+            cell.cardView.contentLabel.text = ""
+        
+        let url = URL(string: "\(GenreAPIManager.shared.imageURL)\(movieList[collectionView.tag][indexPath.item])")
+        cell.cardView.posterImageView.kf.setImage(with: url)
+
                     
         return cell
     }
