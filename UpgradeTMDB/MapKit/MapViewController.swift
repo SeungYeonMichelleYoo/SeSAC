@@ -76,16 +76,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    
-    //MARK: - 지도 중심, 범위 설정
-    func setRegion(center: CLLocationCoordinate2D) {
-        
-        //지도 중심 기반으로 보여질 범위
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 20000, longitudinalMeters: 20000)
-        mapView.setRegion(region, animated: true)
-        
-    }
-    
     //MARK: - 영화관 핀 여러개 찍기- 오늘의교훈: region과 annotation은 항상 함께한다.ㅋㅋ
     
     func getTheaterAnnotations(theaterName: String) {
@@ -93,22 +83,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         for theater in theaterData.mapAnnotations {
             if (theaterName == "" || theater.type == theaterName) {
                 let coord = CLLocationCoordinate2DMake(theater.latitude, theater.longitude)
-                setRegion(center: coord)
-                setAnnotation(center: coord, brand: theater.type, location: theater.location)
+                setRegionAndAnnotation(center: coord, brand: theater.type, location: theater.location)
             }
         }
     }
     
-    
-    //MARK: - 맵뷰내 pin 설정
-    func setAnnotation(center: CLLocationCoordinate2D, brand: String, location: String) {
+    func setRegionAndAnnotation(center: CLLocationCoordinate2D, brand: String, location: String) {
+        //지도 중심 기반으로 보여질 범위
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 20000, longitudinalMeters: 20000)
+        mapView.setRegion(region, animated: true)
+        //annotation 핀 고정
         let annotation = MKPointAnnotation()
         annotation.coordinate = center
-        annotation.title = brand
-        
+        annotation.title = location
         mapView.addAnnotation(annotation)
     }
-    
+        
     
     @IBAction func currentLocationClicked(_ sender: UIButton) {
         guard let currentLocation = locationManager.location else {
@@ -214,8 +204,9 @@ extension MapViewController {
     //MARK: - 현재위치
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
-            if let coordinate = locations.last?.coordinate {
-                setRegion(center: coordinate)
+        if let coordinate = locations.last?.coordinate {
+                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 20000, longitudinalMeters: 20000)
+                mapView.setRegion(region, animated: true)
             }
             locationManager.stopUpdatingLocation()
         }
