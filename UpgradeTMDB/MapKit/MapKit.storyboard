@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MapViewController" customModule="UpgradeTMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dmU-cQ-49U">
+                                <rect key="frame" x="0.0" y="190" width="414" height="672"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="bng-mO-bGt">
+                                <rect key="frame" x="20" y="94" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVz-BI-6kV">
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="현재 위치"/>
+                                        <connections>
+                                            <action selector="currentLocationClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="i3P-pV-LPG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-H1-Kkf">
+                                        <rect key="frame" x="134.5" y="0.0" width="105" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="새싹 캠퍼스"/>
+                                        <connections>
+                                            <action selector="seSacCampusClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dhe-qR-EFm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpa-pX-eWs">
+                                        <rect key="frame" x="268.5" y="0.0" width="105.5" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Alert"/>
+                                        <connections>
+                                            <action selector="actionSheetClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lr5-cp-okb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bC7-vI-pp5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dmU-cQ-49U" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.75" id="9No-mz-EPD"/>
+                            <constraint firstItem="bng-mO-bGt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="9hB-Pk-UDA"/>
+                            <constraint firstItem="bng-mO-bGt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="H4H-bH-wfv"/>
+                            <constraint firstItem="dmU-cQ-49U" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Jt7-Nl-1M8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bng-mO-bGt" secondAttribute="trailing" constant="20" id="SeH-e2-xXq"/>
+                            <constraint firstItem="bng-mO-bGt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="eCK-Ya-efu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dmU-cQ-49U" secondAttribute="bottom" id="myX-gI-Zek"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dmU-cQ-49U" secondAttribute="trailing" id="vsn-ct-mpy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="dmU-cQ-49U" id="iKn-no-RfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="29.464285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
