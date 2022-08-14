@@ -45,11 +45,12 @@ class TMDBAPIManager {
                 for list in json["episodes"].arrayValue {
                     let value = list["still_path"].stringValue
                     stillArray.append(value)
+                    //print: [still1, still2, still3.... ]
                 }
                 
-                let value = json["episodes"].arrayValue.map { $0["still_path"].stringValue }
-                
-                completionHandler(value)
+                //let value = json["episodes"].arrayValue.map { $0["still_path"].stringValue }
+
+                completionHandler(stillArray)
                                 
             case .failure(let error):
                 print(error)
@@ -71,7 +72,7 @@ class TMDBAPIManager {
         var posterList: [[String]] = []
         
         //나~~중에 배울 것: async/await(iOS13 이상)
-        TMDBAPIManager.shared.callRequest(query: tvList[0].1) { value in
+        TMDBAPIManager.shared.callRequest(query: tvList[0].1) { value in //value = stillArray
             posterList.append(value)
 
             TMDBAPIManager.shared.callRequest(query: self.tvList[1].1) { value in

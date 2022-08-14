@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
         bannerCollectionView.collectionViewLayout = collectionViewLayout()
         bannerCollectionView.isPagingEnabled = true //자석처럼 셀이 넘어감(오픈소스:ImageSlideShow). device width와 셀이 같을 때
         
-        TMDBAPIManager.shared.requestImage { value in
+        TMDBAPIManager.shared.requestImage { value in //value = posterList
             dump(value)
             //1. 네트워크 통신 2. 배열 생성 3. 배열 담기
             //4. 뷰 등에 표현

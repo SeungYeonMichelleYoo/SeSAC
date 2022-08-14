@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		544C4D7D28A3307D00029D01 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */; };
 		544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */; };
+		54566BAF28A5D71300CEB086 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 54566BAE28A5D71300CEB086 /* YPImagePicker */; };
+		54566BB228A5D73800CEB086 /* TLPhotoPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 54566BB128A5D73800CEB086 /* TLPhotoPicker */; };
+		54566BB428A5DD1600CEB086 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54566BB328A5DD1600CEB086 /* CameraViewController.swift */; };
 		547F61BC28A1E040002EA150 /* SameButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61BB28A1E040002EA150 /* SameButtons.swift */; };
 		547F61BE28A1E5FC002EA150 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547F61BD28A1E5FC002EA150 /* CardView.xib */; };
 		547F61C028A1E649002EA150 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61BF28A1E649002EA150 /* CardView.swift */; };
@@ -16,6 +19,8 @@
 		547F61C428A1F37B002EA150 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547F61C228A1F37B002EA150 /* CardCollectionViewCell.xib */; };
 		547F61C628A1F637002EA150 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61C528A1F637002EA150 /* MainViewController.swift */; };
 		547F61C828A1FC61002EA150 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F61C728A1FC61002EA150 /* MainTableViewCell.swift */; };
+		5489ED2628A8FEB400296634 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489ED2528A8FEB400296634 /* WeatherViewController.swift */; };
+		54B9EF5428A493B50086AA0A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9EF5328A493B50086AA0A /* MapViewController.swift */; };
 		54EC181D28A08FEF003EF5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC181C28A08FEF003EF5EE /* AppDelegate.swift */; };
 		54EC181F28A08FEF003EF5EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */; };
 		54EC182128A08FEF003EF5EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC182028A08FEF003EF5EE /* ViewController.swift */; };
@@ -36,6 +41,7 @@
 /* Begin PBXFileReference section */
 		544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		54566BB328A5DD1600CEB086 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		547F61BB28A1E040002EA150 /* SameButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameButtons.swift; sourceTree = "<group>"; };
 		547F61BD28A1E5FC002EA150 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		547F61BF28A1E649002EA150 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 		547F61C228A1F37B002EA150 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CardCollectionViewCell.xib; path = SeSACWeek6/CardCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		547F61C528A1F637002EA150 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		547F61C728A1FC61002EA150 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		5489ED2528A8FEB400296634 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		54B9EF5328A493B50086AA0A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		54EC181928A08FEF003EF5EE /* SeSACWeek6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EC181C28A08FEF003EF5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 				54EC183828A09053003EF5EE /* Kingfisher in Frameworks */,
 				54EC183228A09035003EF5EE /* SwiftyJSON in Frameworks */,
 				54EC183528A09045003EF5EE /* Alamofire in Frameworks */,
+				54566BAF28A5D71300CEB086 /* YPImagePicker in Frameworks */,
+				54566BB228A5D73800CEB086 /* TLPhotoPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +131,15 @@
 				54EC181E28A08FEF003EF5EE /* SceneDelegate.swift */,
 				54EC182028A08FEF003EF5EE /* ViewController.swift */,
 				54EC182228A08FEF003EF5EE /* Main.storyboard */,
+				54B9EF5328A493B50086AA0A /* MapViewController.swift */,
 				547F61C528A1F637002EA150 /* MainViewController.swift */,
 				54EC182528A08FF1003EF5EE /* Assets.xcassets */,
 				54EC182728A08FF1003EF5EE /* LaunchScreen.storyboard */,
 				54EC182A28A08FF1003EF5EE /* Info.plist */,
 				54EC183C28A0914F003EF5EE /* APIKey.swift */,
 				54EC184728A0AC30003EF5EE /* ClosureViewController.swift */,
+				54566BB328A5DD1600CEB086 /* CameraViewController.swift */,
+				5489ED2528A8FEB400296634 /* WeatherViewController.swift */,
 			);
 			path = SeSACWeek6;
 			sourceTree = "<group>";
@@ -162,6 +175,8 @@
 				54EC183128A09035003EF5EE /* SwiftyJSON */,
 				54EC183428A09045003EF5EE /* Alamofire */,
 				54EC183728A09053003EF5EE /* Kingfisher */,
+				54566BAE28A5D71300CEB086 /* YPImagePicker */,
+				54566BB128A5D73800CEB086 /* TLPhotoPicker */,
 			);
 			productName = SeSACWeek6;
 			productReference = 54EC181928A08FEF003EF5EE /* SeSACWeek6.app */;
@@ -195,6 +210,8 @@
 				54EC183028A09035003EF5EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				54EC183328A09045003EF5EE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				54EC183628A09053003EF5EE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				54566BAD28A5D71300CEB086 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				54566BB028A5D73800CEB086 /* XCRemoteSwiftPackageReference "TLPhotoPicker" */,
 			);
 			productRefGroup = 54EC181A28A08FEF003EF5EE /* Products */;
 			projectDirPath = "";
@@ -227,8 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				547F61C828A1FC61002EA150 /* MainTableViewCell.swift in Sources */,
+				5489ED2628A8FEB400296634 /* WeatherViewController.swift in Sources */,
 				54EC182128A08FEF003EF5EE /* ViewController.swift in Sources */,
 				54EC181D28A08FEF003EF5EE /* AppDelegate.swift in Sources */,
+				54566BB428A5DD1600CEB086 /* CameraViewController.swift in Sources */,
 				54EC184828A0AC30003EF5EE /* ClosureViewController.swift in Sources */,
 				547F61C628A1F637002EA150 /* MainViewController.swift in Sources */,
 				547F61C328A1F37B002EA150 /* CardCollectionViewCell.swift in Sources */,
@@ -241,6 +260,7 @@
 				54EC184028A09499003EF5EE /* Endpoint.swift in Sources */,
 				544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */,
 				54EC184228A09512003EF5EE /* URL+Extension.swift in Sources */,
+				54B9EF5428A493B50086AA0A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +415,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +444,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +482,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		54566BAD28A5D71300CEB086 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		54566BB028A5D73800CEB086 /* XCRemoteSwiftPackageReference "TLPhotoPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tilltue/TLPhotoPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		54EC183028A09035003EF5EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -487,6 +525,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		54566BAE28A5D71300CEB086 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54566BAD28A5D71300CEB086 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+		54566BB128A5D73800CEB086 /* TLPhotoPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54566BB028A5D73800CEB086 /* XCRemoteSwiftPackageReference "TLPhotoPicker" */;
+			productName = TLPhotoPicker;
+		};
 		54EC183128A09035003EF5EE /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54EC183028A09035003EF5EE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
