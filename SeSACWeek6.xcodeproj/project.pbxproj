@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540F76E728A9DA8D00D5E57D /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F76E628A9DA8D00D5E57D /* WeatherAPIManager.swift */; };
+		540F76EA28A9DD7E00D5E57D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F76E928A9DD7E00D5E57D /* WeatherModel.swift */; };
 		544C4D7D28A3307D00029D01 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */; };
 		544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */; };
 		54566BAF28A5D71300CEB086 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 54566BAE28A5D71300CEB086 /* YPImagePicker */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540F76E628A9DA8D00D5E57D /* WeatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
+		540F76E928A9DD7E00D5E57D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		544C4D7C28A3307D00029D01 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		54566BB328A5DD1600CEB086 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540F76E828A9DD6C00D5E57D /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				540F76E928A9DD7E00D5E57D /* WeatherModel.swift */,
+				5489ED2528A8FEB400296634 /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		544C4D7B28A3306500029D01 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 		54EC181B28A08FEF003EF5EE /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				540F76E828A9DD6C00D5E57D /* Weather */,
 				544C4D7B28A3306500029D01 /* Protocol */,
 				547F61BA28A1DFE2002EA150 /* View */,
 				54EC183E28A09484003EF5EE /* Network */,
@@ -139,7 +153,6 @@
 				54EC183C28A0914F003EF5EE /* APIKey.swift */,
 				54EC184728A0AC30003EF5EE /* ClosureViewController.swift */,
 				54566BB328A5DD1600CEB086 /* CameraViewController.swift */,
-				5489ED2528A8FEB400296634 /* WeatherViewController.swift */,
 			);
 			path = SeSACWeek6;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 				54EC184128A09512003EF5EE /* URL+Extension.swift */,
 				54EC184328A0A789003EF5EE /* KakaoAPIManager.swift */,
 				544C4D7F28A343E600029D01 /* TMDBAPIManager.swift */,
+				540F76E628A9DA8D00D5E57D /* WeatherAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 				5489ED2628A8FEB400296634 /* WeatherViewController.swift in Sources */,
 				54EC182128A08FEF003EF5EE /* ViewController.swift in Sources */,
 				54EC181D28A08FEF003EF5EE /* AppDelegate.swift in Sources */,
+				540F76E728A9DA8D00D5E57D /* WeatherAPIManager.swift in Sources */,
 				54566BB428A5DD1600CEB086 /* CameraViewController.swift in Sources */,
 				54EC184828A0AC30003EF5EE /* ClosureViewController.swift in Sources */,
 				547F61C628A1F637002EA150 /* MainViewController.swift in Sources */,
@@ -256,6 +271,7 @@
 				54EC183D28A0914F003EF5EE /* APIKey.swift in Sources */,
 				54EC181F28A08FEF003EF5EE /* SceneDelegate.swift in Sources */,
 				54EC184428A0A789003EF5EE /* KakaoAPIManager.swift in Sources */,
+				540F76EA28A9DD7E00D5E57D /* WeatherModel.swift in Sources */,
 				544C4D7D28A3307D00029D01 /* ReusableViewProtocol.swift in Sources */,
 				54EC184028A09499003EF5EE /* Endpoint.swift in Sources */,
 				544C4D8028A343E600029D01 /* TMDBAPIManager.swift in Sources */,

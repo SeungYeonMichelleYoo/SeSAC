@@ -452,27 +452,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="온도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-Bg-XHO">
-                                <rect key="frame" x="20" y="196" width="160" height="21"/>
+                                <rect key="frame" x="20" y="196" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="MfX-EA-NyQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="MfX-EA-NyQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="습도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-86-MBg">
-                                <rect key="frame" x="20" y="237" width="150" height="21"/>
+                                <rect key="frame" x="20" y="237" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="ex3-sN-381"/>
+                                    <constraint firstAttribute="width" constant="300" id="ex3-sN-381"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="풍속" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-bp-fME">
-                                <rect key="frame" x="20" y="278" width="180" height="21"/>
+                                <rect key="frame" x="20" y="278" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="AeK-78-zWw"/>
+                                    <constraint firstAttribute="width" constant="300" id="AeK-78-zWw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

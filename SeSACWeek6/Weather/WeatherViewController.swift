@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreLocation
+import Kingfisher
+import Alamofire
+import SwiftyJSON
 
 class WeatherViewController: UIViewController {
         
@@ -17,10 +20,13 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var WindLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
+    var weatherData: WeatherModel!
+    var imageURL: String = ""
+    
     // CLLocationManager클래스의 인스턴스 locationManager를 생성
     let locationManager = CLLocationManager()
     var latitude: Double?
-    var longtitude: Double?
+    var longitude: Double?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +45,52 @@ class WeatherViewController: UIViewController {
         // 위,경도 가져오기
         let coor = locationManager.location?.coordinate
         latitude = coor?.latitude
-        longtitude = coor?.longitude
+        longitude = coor?.longitude
 
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showRequestLocationServiceAlert()
+    }
+    
     @IBAction func refreshBtnClicked(_ sender: UIButton) {
         let coor = locationManager.location?.coordinate
         latitude = coor?.latitude
-        longtitude = coor?.longitude
-        print(latitude ?? 0, longtitude ?? 0)
+        longitude = coor?.longitude
+        print(latitude ?? 0, longitude ?? 0)
+        
+        
+        //위치 정보 한국어로 표시
+        let geocoder: CLGeocoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude ?? 0, longitude: longitude ?? 0)
+        
+        geocoder.reverseGeocodeLocation(location) { (placeMarks, error) in
+            if error == nil, let marks = placeMarks {
+                marks.forEach { (placeMark) in
+                    self.locationLabel.text = "\(placeMark.locality!)"
+                }
+            }
+        }
+        
+        
+        WeatherAPIManager.shared.callRequest(lat: latitude ?? 0, lon: longitude ?? 0) { weather, image in
+            self.weatherData = weather
+            
+            self.temperatureLabel.text = "지금은 \(self.weatherData.temperature - 273.15)도 입니다."
+            self.humidityLabel.text = "\(self.weatherData.humidity)%만큼 습해요."
+            self.WindLabel.text = "\(self.weatherData.wind)m/s만큼 바람이 불어요."
+            //아이콘 이미지 표시
+            let imageURL = URL(string: "http://openweathermap.org/img/wn/\(image)@2x.png")
+            self.iconImageView.kf.setImage(with: imageURL)
+        }
+        
+        //각 라벨에 표시
+        let format = DateFormatter()
+        format.dateFormat = "MM월 dd일 HH시 mm분"
+        let current_date_string = format.string(from: Date())
+        timeLabel.text = "\(current_date_string)"
     }
+    
 }
 
 //위치 관련된 User Defined 메서드
@@ -132,6 +174,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         //ex. 위도 경도 기반으로 날씨 정보를 조회
         //ex. 지도를 다시 세팅
         if let coordinate = locations.last?.coordinate {
+            
 //            setRegionAndAnnotation(center: coordinate)
         }
         //업데이트 된 location으로 mapView의 center를 변경해주는 코드
