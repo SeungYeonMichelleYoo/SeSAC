@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540C86D728AB890400F6F7F3 /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540C86D628AB890400F6F7F3 /* WalkThrough.storyboard */; };
+		540C86D928AB8C3300F6F7F3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540C86D828AB8C3300F6F7F3 /* FirstViewController.swift */; };
+		540C86DB28AB8C3E00F6F7F3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540C86DA28AB8C3E00F6F7F3 /* SecondViewController.swift */; };
+		540C86DD28AB8C4900F6F7F3 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540C86DC28AB8C4900F6F7F3 /* ThirdViewController.swift */; };
+		540C86DF28AB8C7C00F6F7F3 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540C86DE28AB8C7C00F6F7F3 /* WalkThroughViewController.swift */; };
+		5422C1E428ABACB100F9BD94 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542C785C28ABA9B7002DEAEB /* UIFramework.framework */; };
+		5422C1E528ABACB100F9BD94 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 542C785C28ABA9B7002DEAEB /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5425CA5028A73D97007D624A /* MapKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5425CA4F28A73D97007D624A /* MapKit.storyboard */; };
 		5425CA5228A73DE0007D624A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CA5128A73DE0007D624A /* MapViewController.swift */; };
 		5439D6C728A2A5D400858034 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5439D6C628A2A5D400858034 /* CardView.xib */; };
@@ -43,9 +50,46 @@
 		54F9962728A51C7F00FFCE81 /* GenreAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9962628A51C7F00FFCE81 /* GenreAPIManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		542C785B28ABA9B7002DEAEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 544F6B2228AB1BC00063D4D9;
+			remoteInfo = UIFramework;
+		};
+		542C785D28ABA9B7002DEAEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 544F6B2C28AB1BC00063D4D9;
+			remoteInfo = UIFrameworkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5422C1E628ABACB100F9BD94 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5422C1E528ABACB100F9BD94 /* UIFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		540C86D628AB890400F6F7F3 /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
+		540C86D828AB8C3300F6F7F3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		540C86DA28AB8C3E00F6F7F3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		540C86DC28AB8C4900F6F7F3 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		540C86DE28AB8C7C00F6F7F3 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		5425CA4F28A73D97007D624A /* MapKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapKit.storyboard; sourceTree = "<group>"; };
 		5425CA5128A73DE0007D624A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIFramework.xcodeproj; path = ../UIFramework/UIFramework.xcodeproj; sourceTree = "<group>"; };
 		5439D6C628A2A5D400858034 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		5439D6C828A2A5FC00858034 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		54433EC028A1175E00F4CCFC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5441EA6428A45821008D39FE /* Kingfisher in Frameworks */,
+				5422C1E428ABACB100F9BD94 /* UIFramework.framework in Frameworks */,
 				5492CF2A289BA5D800324766 /* SwiftyJSON in Frameworks */,
 				5492CF27289BA5B900324766 /* Alamofire in Frameworks */,
 			);
@@ -93,6 +138,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540C86D528AB88F800F6F7F3 /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				540C86D628AB890400F6F7F3 /* WalkThrough.storyboard */,
+				540C86D828AB8C3300F6F7F3 /* FirstViewController.swift */,
+				540C86DA28AB8C3E00F6F7F3 /* SecondViewController.swift */,
+				540C86DC28AB8C4900F6F7F3 /* ThirdViewController.swift */,
+				540C86DE28AB8C7C00F6F7F3 /* WalkThroughViewController.swift */,
+			);
+			path = WalkThrough;
+			sourceTree = "<group>";
+		};
+		5422C1E128ABACB100F9BD94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5425CA4E28A73D7B007D624A /* MapKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +165,15 @@
 				5455771E28A7C1B300621972 /* TheaterData.swift */,
 			);
 			path = MapKit;
+			sourceTree = "<group>";
+		};
+		542C785728ABA9B7002DEAEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				542C785C28ABA9B7002DEAEB /* UIFramework.framework */,
+				542C785E28ABA9B7002DEAEB /* UIFrameworkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		546EDFF6289F90C60016D7BC /* DetailViews */ = {
@@ -139,9 +212,11 @@
 		5492CF00289BA47500324766 = {
 			isa = PBXGroup;
 			children = (
+				542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */,
 				5492CF20289BA4A100324766 /* .gitignore */,
 				5492CF0B289BA47500324766 /* UpgradeTMDB */,
 				5492CF0A289BA47500324766 /* Products */,
+				5422C1E128ABACB100F9BD94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +231,7 @@
 		5492CF0B289BA47500324766 /* UpgradeTMDB */ = {
 			isa = PBXGroup;
 			children = (
+				540C86D528AB88F800F6F7F3 /* WalkThrough */,
 				5425CA4E28A73D7B007D624A /* MapKit */,
 				549C546E28A23C5A00FC3EFC /* Netflix */,
 				54929213289F849800CC2DDA /* Main */,
@@ -214,6 +290,7 @@
 				5492CF05289BA47500324766 /* Sources */,
 				5492CF06289BA47500324766 /* Frameworks */,
 				5492CF07289BA47500324766 /* Resources */,
+				5422C1E628ABACB100F9BD94 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,12 +337,35 @@
 			);
 			productRefGroup = 5492CF0A289BA47500324766 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 542C785728ABA9B7002DEAEB /* Products */;
+					ProjectRef = 542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5492CF08289BA47500324766 /* UpgradeTMDB */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		542C785C28ABA9B7002DEAEB /* UIFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIFramework.framework;
+			remoteRef = 542C785B28ABA9B7002DEAEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		542C785E28ABA9B7002DEAEB /* UIFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIFrameworkTests.xctest;
+			remoteRef = 542C785D28ABA9B7002DEAEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5492CF07289BA47500324766 /* Resources */ = {
@@ -277,6 +377,7 @@
 				546EDFF5289F90B60016D7BC /* CastTableViewCell.xib in Resources */,
 				5492CF19289BA47600324766 /* LaunchScreen.storyboard in Resources */,
 				549C547028A23D1C00FC3EFC /* Netflix.storyboard in Resources */,
+				540C86D728AB890400F6F7F3 /* WalkThrough.storyboard in Resources */,
 				5492CF16289BA47600324766 /* Assets.xcassets in Resources */,
 				546EDFFA289F918A0016D7BC /* OverviewTableViewCell.xib in Resources */,
 				544C4D7A28A31AAC00029D01 /* CardCollectionViewCell.xib in Resources */,
@@ -293,13 +394,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540C86DB28AB8C3E00F6F7F3 /* SecondViewController.swift in Sources */,
 				5439D6C928A2A5FC00858034 /* CardView.swift in Sources */,
 				54F9962728A51C7F00FFCE81 /* GenreAPIManager.swift in Sources */,
 				546EDFF9289F918A0016D7BC /* OverviewTableViewCell.swift in Sources */,
 				54929210289F6EA000CC2DDA /* DetailViewController.swift in Sources */,
 				5455771F28A7C1B300621972 /* TheaterData.swift in Sources */,
 				54DAB990289D0DAA008D8B75 /* SearchAPIManager.swift in Sources */,
+				540C86D928AB8C3300F6F7F3 /* FirstViewController.swift in Sources */,
 				544C4D7628A3172600029D01 /* MainTableViewCell.swift in Sources */,
+				540C86DF28AB8C7C00F6F7F3 /* WalkThroughViewController.swift in Sources */,
 				54DAB98D289D00FA008D8B75 /* MovieModel.swift in Sources */,
 				545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */,
 				5492CF11289BA47500324766 /* SearchViewController.swift in Sources */,
@@ -313,6 +417,7 @@
 				5492CF23289BA53300324766 /* APIKey.swift in Sources */,
 				5492CF0F289BA47500324766 /* SceneDelegate.swift in Sources */,
 				549C547228A23D3B00FC3EFC /* NetflixViewController.swift in Sources */,
+				540C86DD28AB8C4900F6F7F3 /* ThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
