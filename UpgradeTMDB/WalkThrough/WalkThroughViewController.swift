@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UIFramework
 
 class WalkThroughViewController: UIPageViewController {
     
@@ -17,6 +18,21 @@ class WalkThroughViewController: UIPageViewController {
         
         createPageViewController()
         configurePageViewController()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
+        if Storage.isFirstTime() == false {
+            presentToNetflix()
+        }
+    }
+    
+    func presentToNetflix() {
+        let sb = UIStoryboard(name:  "Netflix", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "NetflixViewController") as! NetflixViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+        print("here")
     }
     
     //빈 배열에 뷰컨트롤러 추가
