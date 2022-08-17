@@ -11,14 +11,15 @@ class KakaoTalkViewController: UIViewController {
 
     let xbutton: UIButton = {
         let btn = UIButton()
-        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.setImage(UIImage(systemName: "xmark"), for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
         return btn
     }()
     
     let gift: UIImageView = {
         let img = UIImageView()
         img.image = UIImage.init(named: "gift.png")
-        img.contentMode = .scaleAspectFill
+        img.layer.cornerRadius = 25
         img.clipsToBounds = true
         return img
     }()
@@ -26,7 +27,7 @@ class KakaoTalkViewController: UIViewController {
     let fullscreen: UIImageView = {
         let img = UIImageView()
         img.image = UIImage.init(named: "fullscreen.png")
-        img.contentMode = .scaleAspectFill
+        img.layer.cornerRadius = 25
         img.clipsToBounds = true
         return img
     }()
@@ -34,7 +35,7 @@ class KakaoTalkViewController: UIViewController {
     let setting: UIImageView = {
         let img = UIImageView()
         img.image = UIImage.init(named: "setting.png")
-        img.contentMode = .scaleAspectFill
+        img.layer.cornerRadius = 25
         img.clipsToBounds = true
         return img
     }()
@@ -55,31 +56,31 @@ class KakaoTalkViewController: UIViewController {
         xbutton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leadingMargin.equalTo(20)
-            make.trailingMargin.equalTo(-20)
+//            make.trailingMargin.equalTo(-20)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
         
         gift.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leadingMargin.equalTo(20)
-            make.trailingMargin.equalTo(-70)
+//            make.leadingMargin.equalTo(70)
+            make.trailingMargin.equalTo(-130)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
         
         fullscreen.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leadingMargin.equalTo(20)
-            make.trailingMargin.equalTo(-120)
+//            make.leadingMargin.equalTo(120)
+            make.trailingMargin.equalTo(-75)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
         
         setting.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leadingMargin.equalTo(20)
-            make.trailingMargin.equalTo(-170)
+//            make.leadingMargin.equalTo(170)
+            make.trailingMargin.equalTo(-20)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
