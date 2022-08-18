@@ -12,12 +12,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OverviewTableViewCell" rowHeight="104" id="KGk-i7-Jjw" customClass="OverviewTableViewCell" customModule="UpgradeTMDB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="340" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="OverviewTableViewCell" customModule="UpgradeTMDB" customModuleProvider="target">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="340" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezm-tW-AIJ">
-                        <rect key="frame" x="8" y="8" width="324" height="44"/>
+                        <rect key="frame" x="16" y="8" width="308" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="cTo-QZ-9Sb"/>
                         </constraints>
@@ -33,12 +33,12 @@
                             <constraint firstAttribute="width" constant="30" id="ipL-Ni-Whr"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=" "/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ezm-tW-AIJ" secondAttribute="trailing" constant="8" id="C5p-ob-sf4"/>
-                    <constraint firstItem="ezm-tW-AIJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="IFt-Hj-N80"/>
+                    <constraint firstAttribute="trailing" secondItem="ezm-tW-AIJ" secondAttribute="trailing" constant="16" id="C5p-ob-sf4"/>
+                    <constraint firstItem="ezm-tW-AIJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IFt-Hj-N80"/>
                     <constraint firstItem="ezm-tW-AIJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dOF-YS-EWZ"/>
                     <constraint firstItem="SFt-9f-YOL" firstAttribute="top" secondItem="ezm-tW-AIJ" secondAttribute="bottom" constant="8" id="nfJ-8g-grt"/>
                     <constraint firstItem="SFt-9f-YOL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="vqz-Kl-SnV"/>
@@ -54,4 +54,7 @@
             <point key="canvasLocation" x="127.53623188405798" y="55.580357142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+    </resources>
 </document>

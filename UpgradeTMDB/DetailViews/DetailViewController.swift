@@ -70,7 +70,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 100
+            return 120
         case 1:
             return 150
         case 2:
@@ -80,12 +80,18 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let overViewCell = mainTableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
             overViewCell.overviewLabel.text = "\(movieData.overview)"
+            overViewCell.overviewLabel.numberOfLines = 2
+            overViewCell.overviewLabel.lineBreakMode = .byWordWrapping
+            
+            overViewCell.overviewDetailInfoBtn.addTarget(self, action: #selector("detailInfoBtnClicked(overViewCell.overviewLabel)"), for: .touchUpInside)
+
+            
             return overViewCell
+            
         } else if indexPath.section == 1 {
             guard let castViewCell = mainTableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
             
@@ -122,5 +128,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             castViewCell.configureCell()
             return castViewCell
         }
+    }
+    
+    @objc func detailInfoBtnClicked(label: UILabel) {
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
     }
 }

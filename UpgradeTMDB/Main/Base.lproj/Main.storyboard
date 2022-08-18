@@ -12,7 +12,7 @@
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="UpgradeTMDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="UpgradeTMDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,11 @@
                                     <constraint firstAttribute="height" constant="44" id="8Dt-jh-fv2"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" image="xmark" catalog="system" id="m5q-7E-RKC"/>
+                                    <barButtonItem title="Item" image="xmark" catalog="system" id="m5q-7E-RKC">
+                                        <connections>
+                                            <action selector="xmarkButtonClicked:" destination="Eht-xk-7Gi" id="FAI-Ef-Q0m"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="K2m-Zt-1K4"/>
                                     <barButtonItem title="Item" image="arrow.backward" catalog="system" id="ssh-gX-dUg">
                                         <connections>

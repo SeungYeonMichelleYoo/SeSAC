@@ -23,6 +23,9 @@ class WebViewController: UIViewController {
                
     }
     
+    @IBAction func xmarkButtonClicked(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func goBackButtonClicked(_ sender: UIBarButtonItem) {
         if webView.canGoBack {

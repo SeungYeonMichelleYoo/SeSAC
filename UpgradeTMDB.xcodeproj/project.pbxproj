@@ -16,6 +16,7 @@
 		5422C1E528ABACB100F9BD94 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 542C785C28ABA9B7002DEAEB /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5425CA5028A73D97007D624A /* MapKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5425CA4F28A73D97007D624A /* MapKit.storyboard */; };
 		5425CA5228A73DE0007D624A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CA5128A73DE0007D624A /* MapViewController.swift */; };
+		5434291828AE7BFF002A2112 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434291728AE7BFF002A2112 /* UIViewController+Extension.swift */; };
 		5439D6C728A2A5D400858034 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5439D6C628A2A5D400858034 /* CardView.xib */; };
 		5439D6C928A2A5FC00858034 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5439D6C828A2A5FC00858034 /* CardView.swift */; };
 		5441EA6428A45821008D39FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5441EA6328A45821008D39FE /* Kingfisher */; };
@@ -90,6 +91,7 @@
 		5425CA4F28A73D97007D624A /* MapKit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapKit.storyboard; sourceTree = "<group>"; };
 		5425CA5128A73DE0007D624A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		542C785628ABA9B7002DEAEB /* UIFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIFramework.xcodeproj; path = ../UIFramework/UIFramework.xcodeproj; sourceTree = "<group>"; };
+		5434291728AE7BFF002A2112 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5439D6C628A2A5D400858034 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		5439D6C828A2A5FC00858034 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		54433EC028A1175E00F4CCFC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5434291428AE7BDE002A2112 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5434291728AE7BFF002A2112 /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		546EDFF6289F90C60016D7BC /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 		54929213289F849800CC2DDA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5434291428AE7BDE002A2112 /* Extension */,
 				5492CF12289BA47500324766 /* Main.storyboard */,
 				5492CF10289BA47500324766 /* SearchViewController.swift */,
 				54C1508C289CDA7C0075E0AA /* MainCollectionViewCell.swift */,
@@ -407,6 +418,7 @@
 				54DAB98D289D00FA008D8B75 /* MovieModel.swift in Sources */,
 				545AABC2289E5C4300D3F196 /* PeopleModel.swift in Sources */,
 				5492CF11289BA47500324766 /* SearchViewController.swift in Sources */,
+				5434291828AE7BFF002A2112 /* UIViewController+Extension.swift in Sources */,
 				544C4D7928A31AAC00029D01 /* CardCollectionViewCell.swift in Sources */,
 				5492CF0D289BA47500324766 /* AppDelegate.swift in Sources */,
 				54433EC128A1175E00F4CCFC /* WebViewController.swift in Sources */,
