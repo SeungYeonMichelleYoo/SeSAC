@@ -24,7 +24,14 @@
 		54DBA4D828AB40EE00AC6775 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA4D728AB40EE00AC6775 /* WalkThroughViewController.swift */; };
 		54DBA4DC28AB411400AC6775 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA4DB28AB411400AC6775 /* SecondViewController.swift */; };
 		54DBA4DE28AB411F00AC6775 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA4DD28AB411F00AC6775 /* ThirdViewController.swift */; };
+		54E4A32728AF12920055819D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4A32628AF12920055819D /* BaseViewController.swift */; };
+		54E4A32A28AF14970055819D /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4A32928AF14970055819D /* WriteViewController.swift */; };
+		54E4A32C28AF16B00055819D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4A32B28AF16B00055819D /* BaseView.swift */; };
+		54E4A32E28AF17980055819D /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4A32D28AF17980055819D /* WriteView.swift */; };
+		54E4A33128AF2CFA0055819D /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E4A33028AF2CFA0055819D /* BlackRadiusTextField.swift */; };
 		54EE108328AD1D2A0009CFA8 /* KakaoTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EE108228AD1D2A0009CFA8 /* KakaoTalkViewController.swift */; };
+		54F30C8928ADDF24004E984A /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F30C8828ADDF24004E984A /* UIViewController + Extension.swift */; };
+		54F30C8B28ADE5FF004E984A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F30C8A28ADE5FF004E984A /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +83,14 @@
 		54DBA4D728AB40EE00AC6775 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		54DBA4DB28AB411400AC6775 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		54DBA4DD28AB411F00AC6775 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		54E4A32628AF12920055819D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		54E4A32928AF14970055819D /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		54E4A32B28AF16B00055819D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		54E4A32D28AF17980055819D /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		54E4A33028AF2CFA0055819D /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		54EE108228AD1D2A0009CFA8 /* KakaoTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTalkViewController.swift; sourceTree = "<group>"; };
+		54F30C8828ADDF24004E984A /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		54F30C8A28ADE5FF004E984A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,9 @@
 		544F6B4928AB1FCA0063D4D9 /* Diary_Week7 */ = {
 			isa = PBXGroup;
 			children = (
+				54E4A32828AF14890055819D /* Diary */,
+				54E4A32328AF12830055819D /* Utility */,
+				54F30C8528ADDF10004E984A /* Extension */,
 				5462128B28AC719100563439 /* CodeBase */,
 				544F6B7D28AB3A5D0063D4D9 /* WalkThrough */,
 				544F6B4A28AB1FCA0063D4D9 /* AppDelegate.swift */,
@@ -122,6 +139,7 @@
 				544F6B5328AB1FCB0063D4D9 /* Assets.xcassets */,
 				544F6B5528AB1FCB0063D4D9 /* LaunchScreen.storyboard */,
 				544F6B5828AB1FCB0063D4D9 /* Info.plist */,
+				54F30C8A28ADE5FF004E984A /* ProfileViewController.swift */,
 			);
 			path = Diary_Week7;
 			sourceTree = "<group>";
@@ -163,6 +181,41 @@
 				54EE108228AD1D2A0009CFA8 /* KakaoTalkViewController.swift */,
 			);
 			path = CodeBase;
+			sourceTree = "<group>";
+		};
+		54E4A32328AF12830055819D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				54E4A32F28AF2CDB0055819D /* CustomView */,
+				54E4A32628AF12920055819D /* BaseViewController.swift */,
+				54E4A32B28AF16B00055819D /* BaseView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		54E4A32828AF14890055819D /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				54E4A32928AF14970055819D /* WriteViewController.swift */,
+				54E4A32D28AF17980055819D /* WriteView.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		54E4A32F28AF2CDB0055819D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				54E4A33028AF2CFA0055819D /* BlackRadiusTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		54F30C8528ADDF10004E984A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				54F30C8828ADDF24004E984A /* UIViewController + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,14 +323,21 @@
 				54DBA4DC28AB411400AC6775 /* SecondViewController.swift in Sources */,
 				54DBA4D828AB40EE00AC6775 /* WalkThroughViewController.swift in Sources */,
 				5462129628AC8C2500563439 /* CodeSnap2ViewController.swift in Sources */,
+				54E4A32A28AF14970055819D /* WriteViewController.swift in Sources */,
 				544F6B4F28AB1FCA0063D4D9 /* ViewController.swift in Sources */,
 				54DBA4DE28AB411F00AC6775 /* ThirdViewController.swift in Sources */,
+				54E4A32728AF12920055819D /* BaseViewController.swift in Sources */,
 				5462129428AC822B00563439 /* CodeSnapViewController.swift in Sources */,
 				544F6B4B28AB1FCA0063D4D9 /* AppDelegate.swift in Sources */,
+				54E4A33128AF2CFA0055819D /* BlackRadiusTextField.swift in Sources */,
 				5462128F28AC71B400563439 /* CodeViewController.swift in Sources */,
 				544F6B4D28AB1FCA0063D4D9 /* SceneDelegate.swift in Sources */,
 				54EE108328AD1D2A0009CFA8 /* KakaoTalkViewController.swift in Sources */,
+				54F30C8B28ADE5FF004E984A /* ProfileViewController.swift in Sources */,
+				54F30C8928ADDF24004E984A /* UIViewController + Extension.swift in Sources */,
 				544F6B8328AB3A8F0063D4D9 /* FirstViewController.swift in Sources */,
+				54E4A32C28AF16B00055819D /* BaseView.swift in Sources */,
+				54E4A32E28AF17980055819D /* WriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

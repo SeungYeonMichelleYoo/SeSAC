@@ -9,6 +9,7 @@ import SnapKit
 
 class KakaoTalkViewController: UIViewController {
 
+    //MARK: - 상단 버튼 4개
     let xbutton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -40,6 +41,18 @@ class KakaoTalkViewController: UIViewController {
         return img
     }()
     
+    //MARK: - 중앙 사진
+    
+    let profilePhoto: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage.init(named: "profilephoto.png")
+        img.layer.cornerRadius = 25
+        img.clipsToBounds = true
+        return img
+    }()
+    
+    //MARK: - 하단 버튼 3개
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,14 +69,12 @@ class KakaoTalkViewController: UIViewController {
         xbutton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leadingMargin.equalTo(20)
-//            make.trailingMargin.equalTo(-20)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
         
         gift.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.leadingMargin.equalTo(70)
             make.trailingMargin.equalTo(-130)
             make.width.equalTo(50)
             make.height.equalTo(50)
@@ -71,7 +82,6 @@ class KakaoTalkViewController: UIViewController {
         
         fullscreen.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.leadingMargin.equalTo(120)
             make.trailingMargin.equalTo(-75)
             make.width.equalTo(50)
             make.height.equalTo(50)
@@ -79,7 +89,6 @@ class KakaoTalkViewController: UIViewController {
         
         setting.snp.remakeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.leadingMargin.equalTo(170)
             make.trailingMargin.equalTo(-20)
             make.width.equalTo(50)
             make.height.equalTo(50)
