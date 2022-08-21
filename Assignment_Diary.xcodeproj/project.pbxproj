@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5441CC3328B2768700B76876 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3228B2768700B76876 /* DiaryBaseViewController.swift */; };
+		5441CC3528B2769200B76876 /* DiaryBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3428B2769200B76876 /* DiaryBaseView.swift */; };
+		5441CC3728B276A300B76876 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3628B276A300B76876 /* DiaryViewController.swift */; };
+		5441CC3928B2778300B76876 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3828B2778300B76876 /* DiaryTableViewController.swift */; };
+		5441CC3C28B2782D00B76876 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3B28B2782D00B76876 /* DiaryView.swift */; };
+		5441CC3F28B2787800B76876 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */; };
 		545BE4F828AFD40500D8A1A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4F728AFD40500D8A1A1 /* AppDelegate.swift */; };
 		545BE4FA28AFD40500D8A1A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4F928AFD40500D8A1A1 /* SceneDelegate.swift */; };
 		545BE4FC28AFD40500D8A1A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4FB28AFD40500D8A1A1 /* ViewController.swift */; };
@@ -25,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5441CC3228B2768700B76876 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
+		5441CC3428B2769200B76876 /* DiaryBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBaseView.swift; sourceTree = "<group>"; };
+		5441CC3628B276A300B76876 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		5441CC3828B2778300B76876 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		5441CC3B28B2782D00B76876 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		545BE4F428AFD40500D8A1A1 /* Assignment_Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545BE4F728AFD40500D8A1A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		545BE4F928AFD40500D8A1A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +67,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5441CC2D28B2762000B76876 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				5441CC3D28B2786500B76876 /* CustomView */,
+				5441CC3128B2767000B76876 /* Base */,
+				5441CC3628B276A300B76876 /* DiaryViewController.swift */,
+				5441CC3B28B2782D00B76876 /* DiaryView.swift */,
+				5441CC3828B2778300B76876 /* DiaryTableViewController.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		5441CC3128B2767000B76876 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5441CC3228B2768700B76876 /* DiaryBaseViewController.swift */,
+				5441CC3428B2769200B76876 /* DiaryBaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5441CC3D28B2786500B76876 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		545BE4EB28AFD40500D8A1A1 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +115,7 @@
 		545BE4F628AFD40500D8A1A1 /* Assignment_Diary */ = {
 			isa = PBXGroup;
 			children = (
+				5441CC2D28B2762000B76876 /* Diary */,
 				545BE50C28AFD45100D8A1A1 /* Netflix */,
 				545BE4F728AFD40500D8A1A1 /* AppDelegate.swift */,
 				545BE4F928AFD40500D8A1A1 /* SceneDelegate.swift */,
@@ -196,15 +238,21 @@
 			files = (
 				545BE4FC28AFD40500D8A1A1 /* ViewController.swift in Sources */,
 				545BE51928AFD58C00D8A1A1 /* NetflixView.swift in Sources */,
+				5441CC3F28B2787800B76876 /* BlackRadiusTextField.swift in Sources */,
 				545BE51028AFD49800D8A1A1 /* BaseViewController.swift in Sources */,
 				545BE51D28AFDB5200D8A1A1 /* LoginView.swift in Sources */,
+				5441CC3928B2778300B76876 /* DiaryTableViewController.swift in Sources */,
 				545FBD5728B1EE6100922456 /* UserTextField.swift in Sources */,
+				5441CC3528B2769200B76876 /* DiaryBaseView.swift in Sources */,
 				545BE51228AFD4A100D8A1A1 /* BaseView.swift in Sources */,
 				545BE51B28AFDB4600D8A1A1 /* LoginViewController.swift in Sources */,
 				545BE51728AFD56600D8A1A1 /* Netflix_MainController.swift in Sources */,
 				545BE4F828AFD40500D8A1A1 /* AppDelegate.swift in Sources */,
+				5441CC3728B276A300B76876 /* DiaryViewController.swift in Sources */,
 				545BE51F28AFDB7D00D8A1A1 /* CircleImageView.swift in Sources */,
 				545BE4FA28AFD40500D8A1A1 /* SceneDelegate.swift in Sources */,
+				5441CC3C28B2782D00B76876 /* DiaryView.swift in Sources */,
+				5441CC3328B2768700B76876 /* DiaryBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

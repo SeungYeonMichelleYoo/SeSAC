@@ -19,16 +19,6 @@ class LoginView: BaseView {
         label.font = UIFont.boldSystemFont(ofSize: 30)
         return label
     }()
-    
-    //MARK: - Stackview
-    
-    let verticalstackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        return stackView
-    }()
 
     //MARK: - StackView에 들어갈 항목들
     let emailTextField: UserTextField = {
@@ -70,6 +60,16 @@ class LoginView: BaseView {
         return button
     }()
     
+    //MARK: - Stackview
+    let verticalstackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 8.0
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        return stackView
+    }()
+
     
     //MARK: - 추가정보입력 및 스위치
     let additionalLabel: UILabel = {
@@ -80,6 +80,13 @@ class LoginView: BaseView {
         return label
     }()
     
+    let onoffSwitch: UISwitch = {
+        let view = UISwitch()
+        view.onTintColor = .red
+        view.isOn = true
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -87,30 +94,37 @@ class LoginView: BaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func configureUI() {
-        
-        [jackflixLabel, verticalstackView, additionalLabel].forEach {
+        [self.emailTextField, self.passwordTextField, self.nicknameTextField, self.locationTextField, self.recommendTextField, self.signupButton].forEach { verticalstackView.addArrangedSubview($0) }
+        [jackflixLabel, verticalstackView, additionalLabel, onoffSwitch].forEach {
             self.addSubview($0)
         }
-        
-        let verticalstackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, nicknameTextField, locationTextField, recommendTextField, signupButton])
-        self.addSubview(verticalstackView)
-        
+
     }
     
     override func setConstraints() {
         jackflixLabel.snp.remakeConstraints { make in
             make.top.equalTo(80)
-            make.leadingMargin.equalTo(120)
+            make.centerX.equalToSuperview()
         }
         
         verticalstackView.snp.makeConstraints { make in
             make.top.equalTo(jackflixLabel.snp.bottom).offset(50)
-            make.leadingMargin.equalTo(50)
-            make.trailingMargin.equalTo(50)
-            make.width.equalTo(50)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(300)
         }
+        
+        additionalLabel.snp.makeConstraints { make in
+            make.top.equalTo(verticalstackView.snp.bottom).offset(20)
+            make.leadingMargin.equalTo(38) //verticalstackView.snp.leading으로 하면 안 맞춰짐. 왜????
+        }
+        
+        onoffSwitch.snp.makeConstraints { make in
+            make.centerY.equalTo(additionalLabel)
+            make.trailing.equalTo(verticalstackView.snp.trailing)
+        }
+        
         
     }
     

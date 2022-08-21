@@ -1,5 +1,5 @@
 //
-//  UserTextField.swift
+//  BlackRadiusTextField.swift
 //  Assignment_Diary
 //
 //  Created by SeungYeon Yoo on 2022/08/21.
@@ -7,23 +7,26 @@
 
 import UIKit
 
-class UserTextField: UITextField {
+class BlackRadiusTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        settingTextField()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func settingTextField() {
-        backgroundColor = .darkGray
+    func setupView() {
+        backgroundColor = .clear
         textAlignment = .center
         borderStyle = .none
         layer.cornerRadius = 8
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
         font = .boldSystemFont(ofSize: 16)
-        self.attributedPlaceholder = NSAttributedString(string: " ", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
     }
+    
 }
