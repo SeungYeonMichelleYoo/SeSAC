@@ -22,15 +22,15 @@ class DiaryViewController: DiaryBaseViewController {
         
     }
     
-    override func configure() {
-        mainView.titleTextField.addTarget(self, action: #selector(titleTextFieldClicked(_:)), for: .editingDidEndOnExit)
-    }
-    
-    @objc func titleTextFieldClicked(_ textField: UITextField) {
-        guard let text = textField.text, text.count > 0 else {
-            showAlertMessage(title: "제목을 입력해주세요", button: "확인")
-            return
-        }
-    }
+//    override func configure() {
+//        mainView.titleTextField.addTarget(self, action: #selector(titleTextFieldClicked(_:)), for: .editingDidEndOnExit)
+//    }
+//
+//    @objc func titleTextFieldClicked(_ textField: UITextField) {
+//        guard let text = textField.text, text.count > 0 else {
+//            showAlertMessage(title: "제목을 입력해주세요", button: "확인")
+//            return
+//        }
+//    }
   
 }

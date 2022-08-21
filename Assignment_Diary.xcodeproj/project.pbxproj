@@ -13,6 +13,7 @@
 		5441CC3928B2778300B76876 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3828B2778300B76876 /* DiaryTableViewController.swift */; };
 		5441CC3C28B2782D00B76876 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3B28B2782D00B76876 /* DiaryView.swift */; };
 		5441CC3F28B2787800B76876 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */; };
+		5441CC4128B27D0100B76876 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5441CC4028B27D0100B76876 /* RedButton.swift */; };
 		545BE4F828AFD40500D8A1A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4F728AFD40500D8A1A1 /* AppDelegate.swift */; };
 		545BE4FA28AFD40500D8A1A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4F928AFD40500D8A1A1 /* SceneDelegate.swift */; };
 		545BE4FC28AFD40500D8A1A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4FB28AFD40500D8A1A1 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		5441CC3828B2778300B76876 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		5441CC3B28B2782D00B76876 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		5441CC4028B27D0100B76876 /* RedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
 		545BE4F428AFD40500D8A1A1 /* Assignment_Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545BE4F728AFD40500D8A1A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		545BE4F928AFD40500D8A1A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5441CC3E28B2787800B76876 /* BlackRadiusTextField.swift */,
+				5441CC4028B27D0100B76876 /* RedButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				5441CC3F28B2787800B76876 /* BlackRadiusTextField.swift in Sources */,
 				545BE51028AFD49800D8A1A1 /* BaseViewController.swift in Sources */,
 				545BE51D28AFDB5200D8A1A1 /* LoginView.swift in Sources */,
+				5441CC4128B27D0100B76876 /* RedButton.swift in Sources */,
 				5441CC3928B2778300B76876 /* DiaryTableViewController.swift in Sources */,
 				545FBD5728B1EE6100922456 /* UserTextField.swift in Sources */,
 				5441CC3528B2769200B76876 /* DiaryBaseView.swift in Sources */,

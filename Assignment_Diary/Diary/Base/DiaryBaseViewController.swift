@@ -22,11 +22,10 @@ class DiaryBaseViewController: UIViewController {
     }
     
   
-    func showAlertMessage(title: String, button: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: button, style: .cancel)
-        alert.addAction(ok)
-        self.present(alert, animated: true)
-    }
+//    func redbuttonClicked() {
+//        let sb = DiaryViewController()
+//        let vc = DiaryViewController.instantiateViewController(withIdentifier: "DiaryTableViewController")
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
 }

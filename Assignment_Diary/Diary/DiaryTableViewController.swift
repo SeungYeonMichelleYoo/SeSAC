@@ -11,7 +11,6 @@ class DiaryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
        
     }
 
