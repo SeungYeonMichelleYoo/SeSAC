@@ -14,6 +14,7 @@ class BaseView: UIView {
         super.init(frame: frame)
         configureUI()
         setConstraints()
+        backgroundColor = .black
     }
     
     //스토리보드일 때 쓰는 구문. xib로 뷰를 만들 때. 프로토콜 기반으로 구현이 되어있기 때문에 코드베이스라도 이걸 구현해야됨.

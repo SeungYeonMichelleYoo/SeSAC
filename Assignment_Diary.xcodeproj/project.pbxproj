@@ -21,6 +21,7 @@
 		545BE51B28AFDB4600D8A1A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE51A28AFDB4600D8A1A1 /* LoginViewController.swift */; };
 		545BE51D28AFDB5200D8A1A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE51C28AFDB5200D8A1A1 /* LoginView.swift */; };
 		545BE51F28AFDB7D00D8A1A1 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545BE51E28AFDB7D00D8A1A1 /* CircleImageView.swift */; };
+		545FBD5728B1EE6100922456 /* UserTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545FBD5628B1EE6100922456 /* UserTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		545BE51A28AFDB4600D8A1A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		545BE51C28AFDB5200D8A1A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		545BE51E28AFDB7D00D8A1A1 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		545FBD5628B1EE6100922456 /* UserTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				545BE51E28AFDB7D00D8A1A1 /* CircleImageView.swift */,
+				545FBD5628B1EE6100922456 /* UserTextField.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				545BE51928AFD58C00D8A1A1 /* NetflixView.swift in Sources */,
 				545BE51028AFD49800D8A1A1 /* BaseViewController.swift in Sources */,
 				545BE51D28AFDB5200D8A1A1 /* LoginView.swift in Sources */,
+				545FBD5728B1EE6100922456 /* UserTextField.swift in Sources */,
 				545BE51228AFD4A100D8A1A1 /* BaseView.swift in Sources */,
 				545BE51B28AFDB4600D8A1A1 /* LoginViewController.swift in Sources */,
 				545BE51728AFD56600D8A1A1 /* Netflix_MainController.swift in Sources */,
@@ -347,6 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment_Diary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -374,6 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment_Diary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
