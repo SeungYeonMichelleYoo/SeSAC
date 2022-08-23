@@ -16,7 +16,7 @@ class ShoppingView: BaseView {
         return tableview
     }()
     
-    //MARK: - 테이블뷰 위에 subView(UIView) 삽입
+    //MARK: - subView(UIView) 는 테이블뷰 위에 등록
     
     let subView: UIView = {
         let view = UIView()
@@ -54,42 +54,6 @@ class ShoppingView: BaseView {
         return btn
     }()
     
-    //MARK: - tableview cell . stackview이용
-//    let checkImage: UIImageView = {
-//        let img = UIImageView()
-//        img.image = UIImage(systemName: "checkmark.square.fill")
-//        img.contentMode = .scaleAspectFit
-//        return img
-//    }()
-//
-//    let listLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "쇼핑"
-//        label.textColor = UIColor.black
-//        label.font = UIFont.boldSystemFont(ofSize: 15)
-//        return label
-//    }()
-//
-//    let favoriteButton: UIButton = {
-//        let btn = UIButton()
-//        btn.setImage(UIImage(systemName: "star"), for: .normal)
-//        btn.setTitleColor(UIColor.black, for: .normal)
-//        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-//        btn.contentMode = .scaleAspectFit
-//        return btn
-//    }()
-    
-////    MARK: - stackview
-//    let tableviewcellStackView: UIStackView = {
-//        let stackView = UIStackView()
-//        stackView.axis = .horizontal
-////        stackView.distribution = .fillEqually
-//        stackView.spacing = 8.0
-////        stackView.alignment = .fill
-//        stackView.backgroundColor = .lightGray
-//        return stackView
-//    }()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -100,47 +64,19 @@ class ShoppingView: BaseView {
     
     override func configureUI() {
         
-        //MARK: - tableview
-        
-        self.addSubview(listTableView)
+        [subView, listTableView].forEach {
+            self.addSubview($0)
+        }
         
         //MARK: - subview (테이블뷰 위에 삽입)
-        self.listTableView.addSubview(self.subView)
         self.subView.addSubview(self.shoppingtitleLabel)
         self.subView.addSubview(self.grayUIView)
         self.grayUIView.addSubview(self.addButton)
         self.grayUIView.addSubview(self.purchaseTextField)
-        
-//        //MARK: - stackview안 요소 등록
-//        [self.checkImage, self.listLabel, self.favoriteButton].forEach { tableviewcellStackView.addArrangedSubview($0) }
-        [listTableView, subView].forEach {
-            self.addSubview($0)
-        }
 
-        //MARK: - tableview cell - stackview
-//        self.listTableView.addSubview(self.tableviewcellStackView)
     }
 
     override func setConstraints() {
-        //MARK: - tableview 전체로 덮기
-        listTableView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
-        }
-        
-        //MARK: - 쇼핑 타이틀 라벨
-        shoppingtitleLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(subView)
-            make.top.equalTo(subView.snp.top).inset(8)
-            make.bottom.equalTo(grayUIView.snp.top).offset(20)
-        }
-        
-        //MARK: - 회색 뷰
-        grayUIView.snp.makeConstraints { make in
-            make.top.equalTo(subView.snp.top).offset(70)
-            make.bottom.equalTo(subView.snp.bottom).inset(8)
-            make.leadingMargin.equalTo(subView.snp.leading).inset(20)
-            make.trailingMargin.equalTo(subView.snp.trailing).inset(20)
-        }
         
         //MARK: - subview 윗부분에 삽입
         subView.snp.makeConstraints { make in
@@ -149,6 +85,22 @@ class ShoppingView: BaseView {
             make.trailingMargin.equalTo(self.safeAreaLayoutGuide.snp.trailing)
             make.height.equalTo(150)
         }
+        
+        //MARK: - 쇼핑 타이틀 라벨
+        shoppingtitleLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(subView)
+            make.top.equalTo(subView.snp.top)
+            make.bottom.equalTo(grayUIView.snp.top).offset(-10)
+        }
+        
+        //MARK: - 회색 뷰
+        grayUIView.snp.makeConstraints { make in
+            make.top.equalTo(subView.snp.top).inset(50)
+            make.leadingMargin.equalTo(subView.snp.leading).inset(20)
+            make.trailingMargin.equalTo(subView.snp.trailing).inset(20)
+        }
+                
+
         
         //MARK: - 회색 뷰 안에 텍스트필드, 추가버튼
         
@@ -166,35 +118,14 @@ class ShoppingView: BaseView {
             make.trailingMargin.equalTo(addButton.snp.leading).offset(-20)
             make.bottom.equalTo(grayUIView.snp.bottom).inset(8)
         }
-    
         
-        
-//        MARK: - stackview 안에 구성(테이블뷰 셀)
-
-//        tableviewcellStackView.snp.makeConstraints { make in
-//            make.top.equalTo(150)
-//            make.height.equalTo(80)
-//            make.leadingMargin.equalTo(subView.snp.leading).inset(8)
-//            make.trailingMargin.equalTo(subView.snp.trailing).inset(8)
-//        }
-        
-//        checkImage.snp.makeConstraints { make in
-//            make.width.equalTo(40)
-//            make.height.equalTo(40)
-//            make.centerY.equalTo(tableviewcellStackView)
-//        }
-//
-//        listLabel.snp.makeConstraints { make in
-//            make.leadingMargin.equalTo(checkImage.snp.trailing).offset(20)
-//            make.trailingMargin.equalTo(favoriteButton.snp.leadingMargin).offset(20)
-//        }
-//
-//        favoriteButton.snp.makeConstraints { make in
-//            make.width.equalTo(40)
-//            make.height.equalTo(40)
-//            make.centerY.equalTo(tableviewcellStackView)
-//            make.trailingMargin.equalTo(tableviewcellStackView.snp.trailing).inset(20)
-//        }
+        //MARK: - tableview 밑에만 덮기
+        listTableView.snp.makeConstraints { make in
+            make.top.equalTo(170)
+            make.leadingMargin.equalToSuperview()
+            make.trailingMargin.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
         
     }
 
