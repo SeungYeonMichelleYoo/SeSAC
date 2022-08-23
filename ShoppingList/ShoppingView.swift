@@ -121,7 +121,7 @@ class ShoppingView: BaseView {
         
         //MARK: - tableview 밑에만 덮기
         listTableView.snp.makeConstraints { make in
-            make.top.equalTo(170)
+            make.top.equalTo(200)
             make.leadingMargin.equalToSuperview()
             make.trailingMargin.equalToSuperview()
             make.bottom.equalToSuperview()

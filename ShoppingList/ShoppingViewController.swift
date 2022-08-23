@@ -134,11 +134,9 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         let vc = DetailViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-        
         //2) 값 전달
         vc.titlelabel = tasks[indexPath.row].shoppingThing
+        present(vc, animated: true)
     }
     
     
