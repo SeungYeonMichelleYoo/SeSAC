@@ -7,6 +7,12 @@
 
 import UIKit
 
+
+protocol SelectImageDelegate {
+    func sendImageData(image: UIImage)
+}
+
+
 class CustomTableViewCell: UITableViewCell {
     
     static let cellId = "CustomCell"
@@ -26,6 +32,11 @@ class CustomTableViewCell: UITableViewCell {
         label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 15)
         return label
+    }()
+    
+    lazy var shoppingImg: UIImageView = {
+        let img = UIImageView(frame: .zero)
+        return img
     }()
 
     lazy var favoriteButton: UIButton = {
@@ -84,7 +95,7 @@ class CustomTableViewCell: UITableViewCell {
     private func layout() {
         //contentView 꼭 했어야 했음....!!!
         self.contentView.addSubview(tableviewcellStackView)
-        [self.checkImage, self.listLabel, self.favoriteButton].forEach { tableviewcellStackView.addArrangedSubview($0) }
+        [self.checkImage, self.listLabel, self.shoppingImg, self.favoriteButton].forEach { tableviewcellStackView.addArrangedSubview($0) }
 
                 
         checkImage.snp.makeConstraints { make in
@@ -97,12 +108,19 @@ class CustomTableViewCell: UITableViewCell {
             make.leadingMargin.equalTo(checkImage.snp.trailing).offset(20)
             make.trailingMargin.equalTo(favoriteButton.snp.leadingMargin).offset(20)
         }
-
+    
         favoriteButton.snp.makeConstraints { make in
             make.width.equalTo(40)
             make.height.equalTo(40)
             make.centerY.equalTo(tableviewcellStackView)
             make.trailingMargin.equalTo(tableviewcellStackView.snp.trailing).inset(20)
+        }
+        
+        shoppingImg.snp.makeConstraints { make in
+            make.width.equalTo(70)
+            make.height.equalTo(70)
+            make.centerY.equalTo(tableviewcellStackView)
+            make.trailingMargin.equalTo(favoriteButton).offset(-20)
         }
         
         tableviewcellStackView.snp.makeConstraints { make in
@@ -114,3 +132,11 @@ class CustomTableViewCell: UITableViewCell {
     }
 }
 
+extension CustomTableViewCell: SelectImageDelegate {
+    
+    //언제 실행이 되면 될까? 선택버튼을 눌렀을 때
+    func sendImageData(image: UIImage) {
+        shoppingImg.image = image
+        print(#function)
+    }
+}

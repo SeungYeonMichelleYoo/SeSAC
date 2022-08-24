@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 import RealmSwift //Realm 1.
 
+
 class ShoppingViewController: BaseViewController {
     
     var mainView = ShoppingView()
@@ -96,11 +97,12 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let task = tasks[indexPath.row]
         
         let cell = mainView.listTableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         cell.checkImage.image = task.check ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
-        
+        cell.shoppingImg.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         cell.listLabel.text = task.shoppingThing
         cell.favoriteButton.setImage(task.favorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
         cell.checkBtnAction = { [unowned self] in
@@ -134,9 +136,12 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         let vc = DetailViewController()
+        let navi =  UINavigationController(rootViewController: vc)
         //2) 값 전달
+        vc.data = tasks[indexPath.row]
         vc.titlelabel = tasks[indexPath.row].shoppingThing
-        present(vc, animated: true)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
     }
     
     
@@ -167,3 +172,4 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
     //        }
     //    }
 }
+
