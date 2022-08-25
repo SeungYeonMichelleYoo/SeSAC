@@ -38,6 +38,7 @@
 		5481E76728B32A9A001C81A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5481E76628B32A9A001C81A6 /* HomeViewController.swift */; };
 		548E77E928B5D2620064896A /* FileManager + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548E77E828B5D2620064896A /* FileManager + Extension.swift */; };
 		548E77EB28B5D3420064896A /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548E77EA28B5D3420064896A /* HomeTableViewCell.swift */; };
+		54A1549628B70164006BB1A7 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 54A1549528B70164006BB1A7 /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 				5481E75F28B3163F001C81A6 /* Realm in Frameworks */,
 				04FBA0F428B26B8200BFDC17 /* Kingfisher in Frameworks */,
 				04FBA0F128B26B1D00BFDC17 /* SnapKit in Frameworks */,
+				54A1549628B70164006BB1A7 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +241,7 @@
 				04FBA0F328B26B8200BFDC17 /* Kingfisher */,
 				5481E75E28B3163F001C81A6 /* Realm */,
 				5481E76028B3163F001C81A6 /* RealmSwift */,
+				54A1549528B70164006BB1A7 /* Zip */,
 			);
 			productName = SeSAC2DiaryRealm;
 			productReference = 04FBA0BF28B2645A00BFDC17 /* SeSAC2DiaryRealm.app */;
@@ -272,6 +275,7 @@
 				04FBA0EF28B26B1D00BFDC17 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				04FBA0F228B26B8200BFDC17 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5481E75D28B3163F001C81A6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54A1549428B70164006BB1A7 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 04FBA0C028B2645A00BFDC17 /* Products */;
 			projectDirPath = "";
@@ -470,6 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC2DiaryRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,12 +482,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2DiaryRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = michelle.SeSAC2DiaryRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -497,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N67R5W6U5A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC2DiaryRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -504,12 +511,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.SeSAC2DiaryRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = michelle.SeSAC2DiaryRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -565,6 +573,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		54A1549428B70164006BB1A7 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -587,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5481E75D28B3163F001C81A6 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		54A1549528B70164006BB1A7 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54A1549428B70164006BB1A7 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
