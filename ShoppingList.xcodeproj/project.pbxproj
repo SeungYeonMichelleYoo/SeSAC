@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5437DFA728B5103400C3F3DA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5437DFA628B5103400C3F3DA /* DetailViewController.swift */; };
 		5437DFA928B5104F00C3F3DA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5437DFA828B5104F00C3F3DA /* DetailView.swift */; };
+		5445F00F28B76C0A006A23F9 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 5445F00E28B76C0A006A23F9 /* Zip */; };
+		5445F01228B76D89006A23F9 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445F01128B76D89006A23F9 /* BackupViewController.swift */; };
+		5445F01428B76D90006A23F9 /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445F01328B76D90006A23F9 /* BackupView.swift */; };
 		5461CD9528B62CBD0032F75B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461CD9428B62CBD0032F75B /* BaseCollectionViewCell.swift */; };
 		5461CD9A28B654E00032F75B /* ImageDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461CD9928B654E00032F75B /* ImageDummyData.swift */; };
 		5461CD9C28B655B40032F75B /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461CD9B28B655B40032F75B /* ImageSearchCollectionViewCell.swift */; };
@@ -34,6 +37,8 @@
 /* Begin PBXFileReference section */
 		5437DFA628B5103400C3F3DA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5437DFA828B5104F00C3F3DA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5445F01128B76D89006A23F9 /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		5445F01328B76D90006A23F9 /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
 		5461CD9428B62CBD0032F75B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5461CD9928B654E00032F75B /* ImageDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDummyData.swift; sourceTree = "<group>"; };
 		5461CD9B28B655B40032F75B /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -63,12 +68,22 @@
 				54D17DDE28B3647A007AC6BC /* RealmSwift in Frameworks */,
 				54D17DDC28B3647A007AC6BC /* Realm in Frameworks */,
 				54D17DD928B36454007AC6BC /* SnapKit in Frameworks */,
+				5445F00F28B76C0A006A23F9 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5445F01028B76D74006A23F9 /* BackupAndRestore */ = {
+			isa = PBXGroup;
+			children = (
+				5445F01128B76D89006A23F9 /* BackupViewController.swift */,
+				5445F01328B76D90006A23F9 /* BackupView.swift */,
+			);
+			path = BackupAndRestore;
+			sourceTree = "<group>";
+		};
 		5461CD9228B62C700032F75B /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +123,7 @@
 		54D17DB728B361D4007AC6BC = {
 			isa = PBXGroup;
 			children = (
+				5445F01028B76D74006A23F9 /* BackupAndRestore */,
 				54D17DC228B361D4007AC6BC /* ShoppingList */,
 				54D17DC128B361D4007AC6BC /* Products */,
 			);
@@ -180,6 +196,7 @@
 				54D17DDB28B3647A007AC6BC /* Realm */,
 				54D17DDD28B3647A007AC6BC /* RealmSwift */,
 				5461CD9E28B65AE30032F75B /* Kingfisher */,
+				5445F00E28B76C0A006A23F9 /* Zip */,
 			);
 			productName = ShoppingList;
 			productReference = 54D17DC028B361D4007AC6BC /* ShoppingList.app */;
@@ -213,6 +230,7 @@
 				54D17DD728B36454007AC6BC /* XCRemoteSwiftPackageReference "SnapKit" */,
 				54D17DDA28B3647A007AC6BC /* XCRemoteSwiftPackageReference "realm-swift" */,
 				5461CD9D28B65AE30032F75B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5445F00D28B76C0A006A23F9 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 54D17DC128B361D4007AC6BC /* Products */;
 			projectDirPath = "";
@@ -251,8 +269,10 @@
 				5437DFA928B5104F00C3F3DA /* DetailView.swift in Sources */,
 				54D17DE828B3656D007AC6BC /* ShoppingView.swift in Sources */,
 				5461CDA228B65EFE0032F75B /* FileManager + Extension.swift in Sources */,
+				5445F01228B76D89006A23F9 /* BackupViewController.swift in Sources */,
 				54C2627028B3B630006A9AF7 /* RealmModel.swift in Sources */,
 				5437DFA728B5103400C3F3DA /* DetailViewController.swift in Sources */,
+				5445F01428B76D90006A23F9 /* BackupView.swift in Sources */,
 				54D17DE628B36562007AC6BC /* ShoppingViewController.swift in Sources */,
 				5461CD9C28B655B40032F75B /* ImageSearchCollectionViewCell.swift in Sources */,
 				54D17DE228B36521007AC6BC /* BaseView.swift in Sources */,
@@ -410,6 +430,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,6 +459,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +497,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5445F00D28B76C0A006A23F9 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		5461CD9D28B65AE30032F75B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -502,6 +532,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5445F00E28B76C0A006A23F9 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5445F00D28B76C0A006A23F9 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
 		5461CD9E28B65AE30032F75B /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5461CD9D28B65AE30032F75B /* XCRemoteSwiftPackageReference "Kingfisher" */;
