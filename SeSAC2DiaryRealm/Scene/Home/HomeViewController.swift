@@ -8,10 +8,19 @@
 import UIKit
 import SnapKit
 import RealmSwift // Realm1. import
+import FSCalendar
 
 class HomeViewController: UIViewController {
     
-    let localRealm = try! Realm() // Realm2. Realm 테이블 경로 가져오기. 이 통로를 통해서 데이터를 가져올거야~
+    let repository = UserDiaryRepository()
+    
+    lazy var calendar: FSCalendar = {
+        let view = FSCalendar()
+        view.delegate = self
+        view.dataSource = self
+        view.backgroundColor = .white
+        return view
+    }()
     
     //var: 나중에 실행해도 된다
     //lazy var: 초기화 다 되고나서 실행하려는 경우. 이 경우-> delegate, datasource도 아래 안에다가 쓸 수 있음
@@ -23,6 +32,12 @@ class HomeViewController: UIViewController {
         return view
     }() //즉시 실행 클로저
     //인스턴스가 생성되려고 하는 시점에 즉시 실행됨
+    
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyMMdd"
+        return formatter
+    }()
     
     //여러군데에서 테이블뷰 갱신코드 쓰지 않아도 되게끔 하는 코드
     var tasks: Results<UserDiary>! {
@@ -39,13 +54,26 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+        
+        view.addSubview(calendar)
+        
+        
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.leading.bottom.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.topMargin.equalTo(300)
         }
+        
+        calendar.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(300)
+        }
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonClicked))
         let sortButton = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
         let filterButton = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterButtonClicked))
         navigationItem.leftBarButtonItems = [sortButton, filterButton]
+        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +86,7 @@ class HomeViewController: UIViewController {
         func fetchRealm() {
             //테이블 이름 가져옴(UserDiary.self = 메타타입임) /Realm자체적으로 정렬을 해서 우리는 그대로 내용을 보여주기만 하면 됨
             //3. Realm 데이터를 정렬해 tasks에 담기
-            tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
+            tasks = repository.fetch()
         }
         
         //화면 갱신은 화면 전환 코드 및 생명 주기 실행 점검 필요!
@@ -74,7 +102,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func sortButtonClicked() {
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "regDate", ascending: true) //정렬, 필터, 즐겨찾기
+        tasks = repository.fetchSort("regDate")
     }
     
     //realm filter query, NSPredicate
@@ -82,7 +110,7 @@ class HomeViewController: UIViewController {
     // '' 로 안에 써주어야 string format 분석 가능 아니면 parse 오류 남
     // CONTAINS[c] => [c] : 대소문자 여부
     @objc func filterButtonClicked() {
-        tasks = localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] '일기'")
+        tasks = repository.fetchFilter()
             //.filter("diaryTitle = '오늘의 일기65'")
     }
 
@@ -106,13 +134,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     //테이블뷰 셀 높이가 작을 경우, 이미지가 없을 때, 시스템 이미지가 아닌 경우
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+//        let task = tasks[indexPath.row]
+        
         let favorite = UIContextualAction(style: .normal, title: "즐겨찾기") { action, view, completionHandler in
             print("favorite Button Clicked")
             
             //realm data update (즐겨찾기 true/false에 따라). 데이터 변경시에 항상 써야함
-            try! self.localRealm.write {
+            self.repository.updateFavorite(item: self.tasks[indexPath.row])
+//            try! self.repository.localRealm.write {
                 //하나의 레코드에서 특정 컬럼 하나만 변경
-                self.tasks[indexPath.row].favorite = !self.tasks[indexPath.row].favorite
+//                task.favorite = !task.favorite
                 
                 //하나의 테이블에서 특정 전체 컬럼 전체 값을 변경
 //                self.tasks.setValue(true, forKey: "favorite")
@@ -120,8 +151,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 //하나의 레코드에서 여러 컬럼들이 변경
 //                self.localRealm.create(UserDiary.self, value: ["objectId": self.tasks[indexPath.row].objectId, "diaryContent": "변경 테스트", "diaryTitle": "제목임"], update: .modified)
                 
-                print("Realm Udpdate Succeed. reloadRows 필요")
-            }
+//                print("Realm Udpdate Succeed. reloadRows 필요")
+//            }
             //reloadRows 필요하기 때문에 밑에 fetchRealm() 해줌(사실 1,2번 중에 하나로 구현하면 되는데 여기선 2번으로 구현함)
             //1. 스와이프한 셀 하나만 ReloadRows 코드를 구현 => 상대적 효율성
             //2. 데이터가 변경되었으니 다시 realm에서 데이터를 가지고 오기 => didSet 일관적 형태로 갱신
@@ -136,18 +167,43 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [favorite])
     }
     
-    //trailing일 땐 역순으로 추가됨
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//        let favorite = UIContextualAction(style: .normal, title: "즐겨찾기") { action, view, completionHandler in
-//            print("favorite Button Clicked")
-//        }
-//
-//        let example = UIContextualAction(style: .normal, title: "예시") { action, view, completionHandler in
-//            print("favorite Button Clicked")
-//        }
-//
-//        return UISwipeActionsConfiguration(actions: [favorite, example])
+    //MARK: - trailing swipe action (삭제)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .normal, title: "삭제") { [self] action, view, completionHandler in
+   
+//            //이미지 먼저 삭제 -> 레코드 삭제 순서로 렘 지우면 문제가 안생겼던 이유
+            self.repository.deleteItem(item: self.tasks[indexPath.row])
+//            self.fetchRealm()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+
+}
+
+extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
+    
+    //숫자를 표시하기위한 메서드
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return repository.fetchDate(date: date).count
+    }
+
+//    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
+//        return "새싹"
 //    }
 
+//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+//        return UIImage(systemName: "star.fill")
+//    }
+
+    //date: yyyyMMdd hh:mm:ss => dateformatter
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        return formatter.string(from: date) == "220907" ? "오프라인 모임" : nil
+    }
+
+    //ex) 데이터 100개 -> 특정 선택한 날짜 : 25일 3개 -> 날짜 기준으로 3개만 보여줌
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        tasks = repository.fetchDate(date: date)
+    }
 }

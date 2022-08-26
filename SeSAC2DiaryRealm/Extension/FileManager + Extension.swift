@@ -28,18 +28,7 @@ extension UIViewController {
             return UIImage(systemName: "star.fill")
         }
     }
-    
-    func removeImageFromDocument(fileName: String) {
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //Document 경로
-        let fileURL = documentDirectory.appendingPathComponent(fileName) //세부 경로. 이미지를 저장할 위치
-    
-        //해당하는 fileURL을 지우는 코드
-        do {
-            try FileManager.default.removeItem(at: fileURL)
-        } catch let error {
-            print(error)
-        }
-    }
+
     
     //MARK: - WriteVC에서 가져옴
     //도큐먼트 저장 코드
