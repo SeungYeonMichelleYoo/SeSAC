@@ -41,6 +41,8 @@
 		54A1549628B70164006BB1A7 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 54A1549528B70164006BB1A7 /* Zip */; };
 		54B73BF128B855C0009F90EF /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B73BF028B855C0009F90EF /* UserDiaryRepository.swift */; };
 		54B73BF428B861B2009F90EF /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 54B73BF328B861B2009F90EF /* FSCalendar */; };
+		54C33F9F28B9E01900C4510D /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C33F9E28B9E01900C4510D /* TabbarViewController.swift */; };
+		54C33FA128B9E76600C4510D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C33FA028B9E76600C4510D /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		548E77E828B5D2620064896A /* FileManager + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extension.swift"; sourceTree = "<group>"; };
 		548E77EA28B5D3420064896A /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		54B73BF028B855C0009F90EF /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
+		54C33F9E28B9E01900C4510D /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		54C33FA028B9E76600C4510D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 		04FBA0C128B2645A00BFDC17 /* SeSAC2DiaryRealm */ = {
 			isa = PBXGroup;
 			children = (
+				54C33F9E28B9E01900C4510D /* TabbarViewController.swift */,
+				54C33FA028B9E76600C4510D /* SearchViewController.swift */,
 				5461CDA328B663D20032F75B /* Backup */,
 				5481E76228B319DA001C81A6 /* Realm */,
 				04FBA0E628B269E200BFDC17 /* Scene */,
@@ -314,6 +320,7 @@
 				04FBA0F728B26C3B00BFDC17 /* Transition+Extension.swift in Sources */,
 				04F868C728B2F76F00D1DA25 /* ReusableProtocol.swift in Sources */,
 				5481E76428B319E8001C81A6 /* RealmModel.swift in Sources */,
+				54C33FA128B9E76600C4510D /* SearchViewController.swift in Sources */,
 				04FBA0EA28B26A3100BFDC17 /* WriteViewController.swift in Sources */,
 				5461CDA728B663F60032F75B /* BackupView.swift in Sources */,
 				04FBA0C728B2645A00BFDC17 /* ViewController.swift in Sources */,
@@ -327,6 +334,7 @@
 				04FBA0C328B2645A00BFDC17 /* AppDelegate.swift in Sources */,
 				04F868C328B2F47E00D1DA25 /* BaseCollectionViewCell.swift in Sources */,
 				04FBA0EE28B26A9700BFDC17 /* DiaryImageView.swift in Sources */,
+				54C33F9F28B9E01900C4510D /* TabbarViewController.swift in Sources */,
 				04FBA0FB28B26D6000BFDC17 /* ImageSearchView.swift in Sources */,
 				04F868C528B2F57500D1DA25 /* ImageDummyData.swift in Sources */,
 				548E77EB28B5D3420064896A /* HomeTableViewCell.swift in Sources */,

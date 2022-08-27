@@ -13,18 +13,18 @@ protocol SelectImageDelegate {
 }
 
 class WriteViewController: BaseViewController {
-
+    
     let mainView = WriteView()
-    let localRealm = try! Realm() //Realm2. Realm 테이블에 데이터를 CRUD할 때, Realm 테이블 경로에 접근
+    let repository = UserDiaryRepository()
     
     override func loadView() {
         self.view = mainView
     }
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        print("Realm is located at:", localRealm.configuration.fileURL!)
+        //        print("Realm is located at:", localRealm.configuration.fileURL!)
     }
     
     override func configure() {
@@ -33,6 +33,13 @@ class WriteViewController: BaseViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
+    }
+    
+    @objc func selectImageButtonClicked() {
+        let vc = SearchImageViewController()
+        vc.delegate = self //값 전달
+        vc.name = "고래밥"
+        transition(vc, transitionStyle: .presentNavigation)
     }
     
     @objc func closeButtonClicked() {
@@ -49,14 +56,16 @@ class WriteViewController: BaseViewController {
         
         let task = UserDiary(diaryTitle: title, diaryContent: mainView.contentTextView.text!, diaryDate: Date(), regDate: Date(), photo: nil)
         
+        
+        repository.addItem(item: task)
         //MARK: - realm 에 저장
-        do {
-            try localRealm.write {
-                localRealm.add(task)
-            }
-        } catch let error {
-            print(error)
-        }
+        //        do {
+        //            try localRealm.write {
+        //                localRealm.add(task)
+        //            }
+        //        } catch let error {
+        //            print(error)
+        //        }
         
         //MARK: - 이미지를 저장해야되는 상황에서만 이 코드를 작성
         if let image = mainView.userImageView.image {
@@ -71,21 +80,14 @@ class WriteViewController: BaseViewController {
         
         let task = UserDiary(diaryTitle: "가오늘의 일기\(Int.random(in: 1...1000))", diaryContent: "일기 테스트 내용", diaryDate: Date(), regDate: Date(), photo: nil) // => Record
         
-        //try를 쓰는 이유: 좀더 안전하게 데이터를 가져오기 위해서
-        try! localRealm.write {
-            localRealm.add(task) //Create
-            print("Realm Succeed")
-            dismiss(animated: true)
-        }
-    }
-      
-    @objc func selectImageButtonClicked() {
-        let vc = SearchImageViewController()
-        vc.delegate = self //값 전달
-        vc.name = "고래밥"
-        transition(vc, transitionStyle: .presentNavigation)
+        repository.addItem(item: task)
+        //        try! localRealm.write {
+        //            localRealm.add(task) //Create
+        //            print("Realm Succeed")
+        dismiss(animated: true)
     }
 }
+
 
 extension WriteViewController: SelectImageDelegate {
     

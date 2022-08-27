@@ -59,14 +59,19 @@ class UserDiaryRepository {
     
     func deleteItem(item: UserDiary) {
         
+        let id = item.objectId
+      
         //realm data delete
         try! self.localRealm.write {
             self.localRealm.delete(item)
         }
-        
+        print("objectId: \(item.objectId)")
         //이미지 먼저 삭제 -> 레코드 삭제 순서로 렘 지우면 문제가 안생겼던 이유
         removeImageFromDocument(fileName: "\(item.objectId).jpg")
         
+        // 데이터베이스에는 실제 이미지를 저장하지 않지만, 만약 이미지를 저장한다고 가정했을 때, objectId에 .jpg 를 붙여서 document폴더에 저장한다.
+        // 삭제 시에는 objectId에 .jpg를 붙인 파일이 있는지 여부를 확인 후, 있을 경우에 해당 파일을 삭제한다.
+      
     }
     
     //FileManager + Extension에서 가져옴
@@ -83,5 +88,13 @@ class UserDiaryRepository {
     }
     
     func addItem(item: UserDiary) {
+        //MARK: - realm 에 저장
+        do {
+            try localRealm.write {
+                localRealm.add(item)
+            }
+        } catch let error {
+            print(error)
+        }
     }
 }

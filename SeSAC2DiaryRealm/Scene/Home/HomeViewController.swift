@@ -172,9 +172,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let delete = UIContextualAction(style: .normal, title: "삭제") { [self] action, view, completionHandler in
    
+            print("task.indexpath.row : \(self.tasks[indexPath.row])")
 //            //이미지 먼저 삭제 -> 레코드 삭제 순서로 렘 지우면 문제가 안생겼던 이유
             self.repository.deleteItem(item: self.tasks[indexPath.row])
-//            self.fetchRealm()
+            self.fetchRealm()
         }
         
         return UISwipeActionsConfiguration(actions: [delete])
@@ -182,6 +183,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+//MARK: - 달력 설정
 extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     //숫자를 표시하기위한 메서드
