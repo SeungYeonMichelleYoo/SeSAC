@@ -17,8 +17,12 @@
 		5461CD9C28B655B40032F75B /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461CD9B28B655B40032F75B /* ImageSearchCollectionViewCell.swift */; };
 		5461CD9F28B65AE30032F75B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5461CD9E28B65AE30032F75B /* Kingfisher */; };
 		5461CDA228B65EFE0032F75B /* FileManager + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461CDA128B65EFE0032F75B /* FileManager + Extension.swift */; };
+		546EFC2E28BA36BD001804CF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546EFC2D28BA36BD001804CF /* SearchView.swift */; };
 		54C2627028B3B630006A9AF7 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2626F28B3B630006A9AF7 /* RealmModel.swift */; };
 		54C2627228B3C8E4006A9AF7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2627128B3C8E4006A9AF7 /* CustomTableViewCell.swift */; };
+		54C33FA328B9EDF600C4510D /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C33FA228B9EDF600C4510D /* TabbarViewController.swift */; };
+		54C33FA528B9EE1F00C4510D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C33FA428B9EE1F00C4510D /* SearchViewController.swift */; };
+		54C33FA728B9EF0800C4510D /* UserShoplistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C33FA628B9EF0800C4510D /* UserShoplistRepository.swift */; };
 		54D17DC428B361D4007AC6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D17DC328B361D4007AC6BC /* AppDelegate.swift */; };
 		54D17DC628B361D4007AC6BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D17DC528B361D4007AC6BC /* SceneDelegate.swift */; };
 		54D17DC828B361D4007AC6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D17DC728B361D4007AC6BC /* ViewController.swift */; };
@@ -43,8 +47,12 @@
 		5461CD9928B654E00032F75B /* ImageDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDummyData.swift; sourceTree = "<group>"; };
 		5461CD9B28B655B40032F75B /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5461CDA128B65EFE0032F75B /* FileManager + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + Extension.swift"; sourceTree = "<group>"; };
+		546EFC2D28BA36BD001804CF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		54C2626F28B3B630006A9AF7 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		54C2627128B3C8E4006A9AF7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		54C33FA228B9EDF600C4510D /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		54C33FA428B9EE1F00C4510D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		54C33FA628B9EF0800C4510D /* UserShoplistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShoplistRepository.swift; sourceTree = "<group>"; };
 		54D17DC028B361D4007AC6BC /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D17DC328B361D4007AC6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D17DC528B361D4007AC6BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,10 +120,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		546EFC2F28BA474F001804CF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				54C33FA428B9EE1F00C4510D /* SearchViewController.swift */,
+				546EFC2D28BA36BD001804CF /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		54C2626E28B3B627006A9AF7 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
 				54C2626F28B3B630006A9AF7 /* RealmModel.swift */,
+				54C33FA628B9EF0800C4510D /* UserShoplistRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -123,7 +141,6 @@
 		54D17DB728B361D4007AC6BC = {
 			isa = PBXGroup;
 			children = (
-				5445F01028B76D74006A23F9 /* BackupAndRestore */,
 				54D17DC228B361D4007AC6BC /* ShoppingList */,
 				54D17DC128B361D4007AC6BC /* Products */,
 			);
@@ -140,6 +157,9 @@
 		54D17DC228B361D4007AC6BC /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				54C33FA228B9EDF600C4510D /* TabbarViewController.swift */,
+				546EFC2F28BA474F001804CF /* Search */,
+				5445F01028B76D74006A23F9 /* BackupAndRestore */,
 				5461CDA028B65EEE0032F75B /* Extension */,
 				5461CD9328B62C850032F75B /* Shopping */,
 				5461CD9228B62C700032F75B /* Detail */,
@@ -263,10 +283,14 @@
 				54D17DE428B36528007AC6BC /* BaseViewController.swift in Sources */,
 				54D17DC828B361D4007AC6BC /* ViewController.swift in Sources */,
 				54D17DC428B361D4007AC6BC /* AppDelegate.swift in Sources */,
+				54C33FA528B9EE1F00C4510D /* SearchViewController.swift in Sources */,
 				54D17DC628B361D4007AC6BC /* SceneDelegate.swift in Sources */,
 				5461CD9528B62CBD0032F75B /* BaseCollectionViewCell.swift in Sources */,
 				5461CD9A28B654E00032F75B /* ImageDummyData.swift in Sources */,
+				54C33FA728B9EF0800C4510D /* UserShoplistRepository.swift in Sources */,
 				5437DFA928B5104F00C3F3DA /* DetailView.swift in Sources */,
+				546EFC2E28BA36BD001804CF /* SearchView.swift in Sources */,
+				54C33FA328B9EDF600C4510D /* TabbarViewController.swift in Sources */,
 				54D17DE828B3656D007AC6BC /* ShoppingView.swift in Sources */,
 				5461CDA228B65EFE0032F75B /* FileManager + Extension.swift in Sources */,
 				5445F01228B76D89006A23F9 /* BackupViewController.swift in Sources */,

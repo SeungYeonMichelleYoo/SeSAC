@@ -32,11 +32,6 @@ class BackupViewController: BaseViewController {
         mainView.backupButton.addTarget(self, action: #selector(backupButtonClicked), for: .touchUpInside)
         mainView.returnButton.addTarget(self, action: #selector(returnButtonClicked), for: .touchUpInside)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.returnButtonClicked()
-            
-        }
-        
     }
     
     @objc func xmarkbuttonClicked() {

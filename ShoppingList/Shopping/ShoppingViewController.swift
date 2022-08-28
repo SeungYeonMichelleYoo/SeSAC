@@ -10,9 +10,10 @@ import RealmSwift //Realm 1.
 
 
 class ShoppingViewController: BaseViewController {
-    
+        
     var mainView = ShoppingView()
-    var localRealm = try! Realm() //Realm2. Realm 테이블 경로 가져오기
+    
+    let repository = UserShoplistRepository()
     
     var tasks: Results<UserShopList>! {
         //여러군데에서 테이블뷰 갱신코드 쓰지 않아도 되게끔 하는 코드
@@ -25,20 +26,14 @@ class ShoppingViewController: BaseViewController {
     override func loadView() { //super.loadView 호출 금지
         self.view = mainView
         
-        let username = UserDefaults.standard.string(forKey: "filename") ?? "default"
-        var config = Realm.Configuration.defaultConfiguration
-        config.fileURL!.deleteLastPathComponent()
-        config.fileURL!.appendPathComponent(username)
-        config.fileURL!.appendPathExtension("realm")
-        
-        localRealm = try! Realm(configuration: config)
+        repository.resetLocalRealm()
 
         fetchRealm()
         print(tasks.count)
         mainView.listTableView.reloadData()
         //3. Realm 데이터를 정렬해 tasks에 담기
-        tasks = localRealm.objects(UserShopList.self).sorted(byKeyPath: "shoppingThing", ascending: false)
-        
+        tasks = repository.fetch()
+    
         mainView.listTableView.delegate = self
         mainView.listTableView.dataSource = self
         mainView.listTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
@@ -47,9 +42,9 @@ class ShoppingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Realm is located at:", localRealm.configuration.fileURL!)
+//        print("Realm is located at:", localRealm.configuration.fileURL!)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "메뉴보기", style: .plain, target: self, action: #selector(seeMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "정렬/필터링", style: .plain, target: self, action: #selector(seeMenu))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "백업/복원", style: .plain, target: self, action: #selector(goBackupButtonClicked))
     }
     @objc func goBackupButtonClicked() {
@@ -63,13 +58,13 @@ class ShoppingViewController: BaseViewController {
         let alert = UIAlertController(title: title, message: "선택하세요", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         let filter = UIAlertAction(title: "필터링", style: .default,  handler: { [self] alertAction in
-            self.tasks = self.localRealm.objects(UserShopList.self).filter("shoppingThing CONTAINS '음료'")
+            self.tasks = repository.fetchFilter()
         })
         let sortbyFav = UIAlertAction(title: "즐겨찾기순 정렬", style: .default, handler: { [self] alertAction in
-            self.tasks = self.localRealm.objects(UserShopList.self).sorted(byKeyPath: "favorite", ascending: true)
+            self.tasks = repository.fetchSort("favrorite")
         })
         let sortbyCheck = UIAlertAction(title: "할 일 기준 정렬", style: .default, handler: { [self] alertAction in
-            self.tasks = self.localRealm.objects(UserShopList.self).sorted(byKeyPath: "check", ascending: true)
+            self.tasks = repository.fetchSort("check")
         })
         alert.addAction(cancel)
         alert.addAction(filter)
@@ -81,13 +76,7 @@ class ShoppingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("appeared")
-        let username = UserDefaults.standard.string(forKey: "filename") ?? "default"
-        var config = Realm.Configuration.defaultConfiguration
-        config.fileURL!.deleteLastPathComponent()
-        config.fileURL!.appendPathComponent(username)
-        config.fileURL!.appendPathExtension("realm")
-        
-        localRealm = try! Realm(configuration: config)
+        repository.resetLocalRealm()
 
         fetchRealm()
         print(tasks.count)
@@ -96,7 +85,8 @@ class ShoppingViewController: BaseViewController {
     
     func fetchRealm() {
         //3. Realm 데이터를 정렬해 tasks에 담기
-        tasks = localRealm.objects(UserShopList.self).sorted(byKeyPath: "shoppingThing", ascending: false)
+        
+        tasks = repository.fetch()
     }
     
     override func configure() {
@@ -105,14 +95,7 @@ class ShoppingViewController: BaseViewController {
     
     //realm create sample
     @objc func addButtonClicked() {
-        
-        let data = UserShopList()
-        data.shoppingThing = mainView.purchaseTextField.text!
-        
-        try! localRealm.write {
-            localRealm.add(data)
-            mainView.purchaseTextField.text = ""
-        }
+        repository.addItem()
         
         mainView.listTableView.reloadData()
     }
@@ -135,21 +118,14 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
         cell.listLabel.text = task.shoppingThing
         cell.favoriteButton.setImage(task.favorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
         cell.checkBtnAction = { [unowned self] in
-            print("checked clicked")
-            try! self.localRealm.write {
-                task.check = !task.check
+            repository.updateCheck(item: task)
                 tableView.reloadData()
-            }
         }
         
         cell.favoriteBtnAction = { [unowned self] in
             print("favorite clicked")
             print(indexPath.row)
-            //realm data update (즐겨찾기 true/false에 따라). 데이터 변경시에 항상 써야함
-            try! self.localRealm.write {
-                //하나의 레코드에서 특정 컬럼 하나만 변경
-                task.favorite = !task.favorite
-            }
+            repository.updateFavorite(item: task)
             self.fetchRealm()
             self.mainView.listTableView.reloadData()
         }
@@ -177,11 +153,7 @@ extension ShoppingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "삭제")  { [self] action, view, completionHandler in
             print("favorite Button Clicked")
-            
-            //realm data update (즐겨찾기 true/false에 따라). 데이터 변경시에 항상 써야함
-            try! self.localRealm.write {
-                self.localRealm.delete(self.tasks[indexPath.row])
-            }
+            repository.delete(item: self.tasks[indexPath.row])
             self.fetchRealm()
         }
         return UISwipeActionsConfiguration(actions: [delete])
