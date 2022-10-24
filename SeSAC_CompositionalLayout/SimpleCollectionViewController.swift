@@ -7,22 +7,25 @@
 
 import UIKit
 
-struct User {
-    let name: String
-    let age: Int
+struct User: Hashable { //Hashable: Diffable쓰기 위한 준비. Custom으로 만들기 위해선 이 과정이 필요함.
+    let id = UUID().uuidString //만약 struct 에서 열거형, 직접만든 class등 있을 때... ? 각각 데이터를 구별하기 위해서 id라는 요소를 별도로 생성하게 된다.(눈에보이진 않지만 구별해주는 객체)
+    let name: String //Hashable
+    let age: Int //Hashable
 }
 
 class SimpleCollectionViewController: UICollectionViewController {
     
 //    var list = ["닭곰", "삼계탕", "들기름김", "삼분카레", "콘소메 치킨"]
     var list = [User(name: "뽀로로", age: 3),
-                User(name: "에디", age: 13),
+                User(name: "뽀로로", age: 3),
                 User(name: "해리포터", age: 33),
                 User(name: "도라에몽", age: 5)
     ]
     
     //cellForItemAt 전에 생성되어야한다. -> register 코드와 유사한 역할
     var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
+    
+    var dataSource: UICollectionViewDiffableDataSource<Int, User>!
     
 //    var hello: (() -> Void)!
     
@@ -65,20 +68,19 @@ class SimpleCollectionViewController: UICollectionViewController {
             backgroundConfig.strokeColor = .systemPink
             cell.backgroundConfiguration = backgroundConfig
         }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
+        
+            return cell
+        })
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, User>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(list)
+        dataSource.apply(snapshot)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let item = list[indexPath.item]
-        //UICollectionView.CellRegistration
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-        
-        return cell
-    }
 }
 
 extension SimpleCollectionViewController {
