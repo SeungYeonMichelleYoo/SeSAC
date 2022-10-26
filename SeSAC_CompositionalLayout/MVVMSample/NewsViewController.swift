@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class NewsViewController: UIViewController {
 
@@ -17,6 +19,8 @@ class NewsViewController: UIViewController {
     //1. 인스턴스 생성해야 pageNumber count 가져올 수 있다.
     var viewModel = NewsViewModel()
     
+    let disposeBag = DisposeBag()
+    
     var dataSource: UICollectionViewDiffableDataSource<Int, News.NewsItem>!
     
     override func viewDidLoad() {
@@ -25,7 +29,7 @@ class NewsViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
         bindData()
-        configureViews()
+//        configureViews()
     }
     
     func bindData() {
@@ -35,19 +39,45 @@ class NewsViewController: UIViewController {
             self.numberTextField.text = value
         }
         
-        viewModel.dummyNews.bind { item in
+//        viewModel.dummyNews.bind { item in
+//            var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
+//            snapshot.appendSections([0])
+//            snapshot.appendItems(item)
+//            self.dataSource.apply(snapshot, animatingDifferences: false)
+//        }
+        
+        viewModel.dummyNews
+            .withUnretained(self)
+            .bind { (vc, item) in
             var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
             snapshot.appendSections([0])
             snapshot.appendItems(item)
-            self.dataSource.apply(snapshot, animatingDifferences: false)
+            vc.dataSource.apply(snapshot, animatingDifferences: false)
         }
+            .disposed(by: disposeBag)
+        
+        loadButton
+            .rx
+            .tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.viewModel.loaddummyNews()
+            }
+        
+        resetButton
+            .rx
+            .tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.viewModel.resetdummyNews()
+            }
     }
     
-    func configureViews() {
-        numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
-        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
-        loadButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
-    }
+//    func configureViews() {
+//        numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
+//        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+//        loadButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
+//    }
     
     @objc func numberTextFieldChanged() {
         //사용자가 계속해서 입력을 마구마구 하면 3자리 단위로 , 를 찍어준다.
@@ -57,13 +87,13 @@ class NewsViewController: UIViewController {
         viewModel.changePageNumberFormat(text: text)
     }
     
-    @objc func resetButtonTapped() {
-        viewModel.resetdummyNews()
-    }
-    
-    @objc func loadButtonTapped() {
-        viewModel.loaddummyNews()
-    }
+//    @objc func resetButtonTapped() {
+//        viewModel.resetdummyNews()
+//    }
+//
+//    @objc func loadButtonTapped() {
+//        viewModel.loaddummyNews()
+//    }
 }
 
 extension NewsViewController {
