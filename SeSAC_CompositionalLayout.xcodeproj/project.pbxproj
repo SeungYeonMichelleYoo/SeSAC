@@ -20,6 +20,7 @@
 		5437DE502900EF760073AD6D /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5437DE4F2900EF760073AD6D /* SearchPhoto.swift */; };
 		5437DE532900F10D0073AD6D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5437DE522900F10D0073AD6D /* Alamofire */; };
 		5437DE562900F12F0073AD6D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5437DE552900F12F0073AD6D /* Kingfisher */; };
+		543F7B5D2908CBB200806E3C /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543F7B5C2908CBB200806E3C /* SubscribeViewController.swift */; };
 		546C8AF929077A6100A39160 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C8AF829077A6100A39160 /* SubjectViewController.swift */; };
 		546C8AFB290788A200A39160 /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C8AFA290788A200A39160 /* SubjectViewModel.swift */; };
 		548334A428FE2DA600AE6941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548334A328FE2DA600AE6941 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		5437DE4B2900EDF20073AD6D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		5437DE4D2900EE410073AD6D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5437DE4F2900EF760073AD6D /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
+		543F7B5C2908CBB200806E3C /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		546C8AF829077A6100A39160 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		546C8AFA290788A200A39160 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		548334A028FE2DA600AE6941 /* SeSAC_CompositionalLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CompositionalLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				5404DDC4290625CD00807841 /* RxCocoaExampleViewController.swift */,
 				546C8AF829077A6100A39160 /* SubjectViewController.swift */,
 				546C8AFA290788A200A39160 /* SubjectViewModel.swift */,
+				543F7B5C2908CBB200806E3C /* SubscribeViewController.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543F7B5D2908CBB200806E3C /* SubscribeViewController.swift in Sources */,
 				5437DE422900CF830073AD6D /* CObservable.swift in Sources */,
 				548E6C9F28FF90DA0018E85B /* DiffableCollectionViewController.swift in Sources */,
 				548334A828FE2DA600AE6941 /* SimpleTableViewController.swift in Sources */,

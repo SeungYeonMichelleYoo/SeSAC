@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class NewsViewModel {
     
@@ -15,7 +16,8 @@ class NewsViewModel {
     
     //뉴스가 추가되고 제거되는걸 표현
 //    var dummyNews: CObservable<[News.NewsItem]> = CObservable(News.items)
-    var dummyNews = BehaviorSubject(value: News.items)
+//    var dummyNews = BehaviorSubject(value: News.items)
+    var dummyNews = BehaviorRelay(value: News.items)
     
     func changePageNumberFormat(text: String) {
         let numberFormatter = NumberFormatter()
@@ -31,11 +33,13 @@ class NewsViewModel {
     
     func resetdummyNews() {
 //        dummyNews.value = []
-        dummyNews.onNext([])
+//        dummyNews.onNext([])
+        dummyNews.accept([])
     }
     
     func loaddummyNews() {
 //        dummyNews.value = News.items
-        dummyNews.onNext(News.items)
+//        dummyNews.onNext(News.items)
+        dummyNews.accept(News.items)
     }
 }
