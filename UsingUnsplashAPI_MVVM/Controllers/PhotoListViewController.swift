@@ -60,7 +60,7 @@ extension PhotoListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
-//        vc.mainView.detailImg.image = URL(string: photoList[indexPath.item])
+        vc.url = photoList[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -80,7 +80,6 @@ extension PhotoListViewController: UISearchBarDelegate {
                 print(self.photoList.count)
                 DispatchQueue.main.async {
                     self.mainView.collectionView.reloadData()
-//                    self.mainView.collectionView.reloadInputViews() ????
                 }
             }
         }

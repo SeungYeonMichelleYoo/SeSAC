@@ -29,7 +29,7 @@ class DetailView: BaseView {
     override func setConstraints() {
         detailImg.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.width.height.equalTo(200)
+            make.width.height.equalTo(500)
         }
     }
 }
