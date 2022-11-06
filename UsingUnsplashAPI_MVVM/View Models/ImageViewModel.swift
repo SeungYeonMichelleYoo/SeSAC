@@ -13,25 +13,19 @@ enum SearchError: Error {
 
 class ImageViewModel {
     
-    typealias completionHandler = ([SearchResult]) -> Void
+    typealias completionHandler = ([SearchResult], Int, Int) -> Void
         
-    func requestSearchPhoto(query: String, completionHandler: @escaping completionHandler) {
-        APIService.searchPhoto(query: query, completion: { [weak self] photo, statusCode, error in
-//            guard let stautsCode = statusCode, statusCode == 500 else {
-//                print(SearchError.serverError)
-//                return completionHandler([])
-//            }
+    func requestSearchPhoto(query: String, page: Int, completionHandler: @escaping completionHandler) {
+        APIService.searchPhoto(query: query, indexPage: page, completion: { [weak self] photo, statusCode, error in
             if statusCode! != 200 {
                 print(SearchError.serverError)
-                return completionHandler([])
+                return completionHandler([], 0, 0)
             }
-            
             guard let photo = photo else {
                 print(SearchError.noPhoto)
-                return completionHandler([])
+                return completionHandler([], 0, 0)
             }
-//            print(photo)
-            completionHandler((photo as! SearchPhoto).results)
+            completionHandler((photo as! SearchPhoto).results, (photo as! SearchPhoto).totalPages, (photo as! SearchPhoto).total)
         })
     }
 }

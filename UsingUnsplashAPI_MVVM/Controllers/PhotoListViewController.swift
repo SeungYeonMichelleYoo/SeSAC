@@ -15,6 +15,11 @@ class PhotoListViewController: BaseViewController {
     
     var photoList: [String] = []
     
+    //네트워크 요청할 시작 페이지 넘버
+    var startPage = 1
+    var totalPage = 0
+    var totalCount = 0
+    
     override func loadView() {
         self.view = mainView
     }
@@ -24,6 +29,7 @@ class PhotoListViewController: BaseViewController {
         self.navigationItem.title = "Search photos what you want"
  
         addingCollectionView()
+        mainView.collectionView.prefetchDataSource = self //페이지네이션
     
         mainView.searchBar.delegate = self
     }
@@ -73,15 +79,9 @@ extension PhotoListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
         if let text = searchBar.text {
-            viewModel.requestSearchPhoto(query: text) { photo in
-                for p in photo {
-                    self.photoList.append(p.urls.thumb)
-                }
-                print(self.photoList.count)
-                DispatchQueue.main.async {
-                    self.mainView.collectionView.reloadData()
-                }
-            }
+            self.startPage = 1
+            self.photoList = []
+            getData(query: text, start_page: 1)
         }
     }
     
@@ -97,5 +97,40 @@ extension PhotoListViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
+    
+    func getData(query: String, start_page: Int) {
+        print("startPage: \(startPage), start_page: \(start_page)")
+        viewModel.requestSearchPhoto(query: query, page: start_page) { photo, totalPage, totalCount in
+            self.totalPage = totalPage
+            self.totalCount = totalCount
+            for p in photo {
+                self.photoList.append(p.urls.thumb)
+            }
+//            print(self.photoList.count)
+            DispatchQueue.main.async {
+                self.mainView.collectionView.reloadData()
+            }
+        }
+    }
 
+}
+
+//페이지네이션
+extension PhotoListViewController: UICollectionViewDataSourcePrefetching {
+    //셀이 화면에 보이기 직전에 필요한 리소스를 미리 다운 받는 기능
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if photoList.count - 1 == indexPath.item && photoList.count < totalCount {
+                startPage += 1
+                getData(query: mainView.searchBar.text!, start_page: startPage)
+            }
+        }
+        
+//        print("===\(indexPaths)")
+    }
+    
+    //취소: 직접 취소하는 기능을 구현해야 함
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+//        print("cancel===\(indexPaths)")
+    }
 }
