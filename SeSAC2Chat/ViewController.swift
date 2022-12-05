@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SocketIO
 
 //오픈채팅방 구현(단톡방 같은 느낌)
 //채팅방으로 들어가는 순간 소켓 연결됨, 벗어나는 순간 소켓 연결 해제됨.
@@ -26,6 +27,27 @@ class ViewController: UIViewController {
         fetchChats() //지금까지의 채팅을 보여준거임(아직여기까진 실시간으로 반영은 안됨)
         configureTableView()
         
+        //on sesac으로 받은 이벤트를 처리하기 위한 Notification Observer (SocketIOManager의 이벤트 수신에서 달은 NSnotificationcenter 받아오기)
+        NotificationCenter.default.addObserver(self, selector: #selector(getMessage(notification:)), name: NSNotification.Name("getMessage"), object: nil)
+        
+    }
+    @objc func getMessage(notification: NSNotification) {
+            
+        let chat = notification.userInfo!["chat"] as! String
+        let name = notification.userInfo!["name"] as! String
+        let createdAt = notification.userInfo!["createdAt"] as! String
+        let userID = notification.userInfo!["userId"] as! String
+        
+        let value = Chat(text: chat, userID: userID, name: name, username: "", id: "", createdAt: createdAt, updatedAt: "", v: 0, ID: "")
+        
+        self.chat.append(value)
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: self.chat.count - 1, section: 0), at: .bottom, animated: false)
+    }
+    
+    //viewwillappear가 아니라 diddisappear인 이유: back버튼 반 정도로 잡고만 있어도 willdisappear의 경우.. 반응 다름
+    override func viewDidDisappear(_ animated: Bool) {
+        SocketIOManager.shared.closeConnection()
     }
     
     @IBAction func sendButtonClicked(_ sender: UIButton) {
@@ -88,6 +110,7 @@ extension ViewController {
                 self?.chat = value
                 self?.tableView.reloadData()
                 self?.tableView.scrollToRow(at: IndexPath(row: self!.chat.count - 1, section: 0), at: .bottom, animated: false)
+                SocketIOManager.shared.establishConnection() //소켓 통신이 연결되는 시점 (스크롤 다 내린 시점에서) ->여기부터 실시간으로 데이터 받아오는 것 가능
             case .failure(let error):
                 print("FAIL", error)
             }
