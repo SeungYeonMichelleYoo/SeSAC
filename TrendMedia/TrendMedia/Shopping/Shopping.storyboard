@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="olg-Fb-gcc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping Table View Controller-->
+        <scene sceneID="stz-7p-KnQ">
+            <objects>
+                <tableViewController id="olg-Fb-gcc" customClass="ShoppingTableViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1T4-gY-Fpd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="veM-os-xSw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p14-Rl-7y7">
+                                    <rect key="frame" x="20" y="20" width="374" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇을 구매하실 건가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-zd-sy1">
+                                    <rect key="frame" x="20" y="60.5" width="314" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="userTextFieldEnter:" destination="olg-Fb-gcc" eventType="editingDidEndOnExit" id="Hnl-mX-e1H"/>
+                                    </connections>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-Wp-XaE">
+                                    <rect key="frame" x="345" y="60.5" width="49" height="35"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                    <connections>
+                                        <action selector="buttonClicked:" destination="olg-Fb-gcc" eventType="touchUpInside" id="Ra7-XB-iqA"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="KDF-zd-sy1" firstAttribute="height" secondItem="Bil-Wp-XaE" secondAttribute="height" multiplier="0.971429" id="J8D-rJ-D6t"/>
+                                <constraint firstAttribute="trailing" secondItem="Bil-Wp-XaE" secondAttribute="trailing" constant="20" id="OJk-MK-p0Q"/>
+                                <constraint firstAttribute="trailing" secondItem="p14-Rl-7y7" secondAttribute="trailing" constant="20" id="Pcv-ml-8mU"/>
+                                <constraint firstItem="p14-Rl-7y7" firstAttribute="leading" secondItem="veM-os-xSw" secondAttribute="leading" constant="20" id="VaK-Q6-iYf"/>
+                                <constraint firstItem="p14-Rl-7y7" firstAttribute="top" secondItem="veM-os-xSw" secondAttribute="top" constant="20" id="XBi-gj-2jH"/>
+                                <constraint firstItem="Bil-Wp-XaE" firstAttribute="top" secondItem="p14-Rl-7y7" secondAttribute="bottom" constant="20" id="Y2w-0R-RhF"/>
+                                <constraint firstItem="KDF-zd-sy1" firstAttribute="leading" secondItem="veM-os-xSw" secondAttribute="leading" constant="20" id="aMw-zQ-16c"/>
+                                <constraint firstAttribute="trailing" secondItem="KDF-zd-sy1" secondAttribute="trailing" constant="80" id="cTE-a0-v9n"/>
+                                <constraint firstItem="KDF-zd-sy1" firstAttribute="top" secondItem="p14-Rl-7y7" secondAttribute="bottom" constant="20" id="v3t-VS-gmP"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="80" id="qpg-5M-7tI" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="178.5" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qpg-5M-7tI" id="bCs-RV-a74">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-xR-T2i">
+                                            <rect key="frame" x="20" y="21" width="40" height="37.5"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="gBa-xR-T2i" secondAttribute="height" multiplier="1:1" id="fsR-NM-s4m"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-cw-h0e">
+                                            <rect key="frame" x="80" y="29.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21t-p4-JKY">
+                                            <rect key="frame" x="347" y="24.5" width="47" height="31"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gBa-xR-T2i" firstAttribute="top" secondItem="bCs-RV-a74" secondAttribute="top" constant="20" id="2Z0-Hg-oDn"/>
+                                        <constraint firstItem="qyf-cw-h0e" firstAttribute="leading" secondItem="gBa-xR-T2i" secondAttribute="trailing" constant="20" id="Fih-jT-ngZ"/>
+                                        <constraint firstItem="qyf-cw-h0e" firstAttribute="centerY" secondItem="bCs-RV-a74" secondAttribute="centerY" id="Oyb-fH-QcT"/>
+                                        <constraint firstItem="21t-p4-JKY" firstAttribute="centerY" secondItem="bCs-RV-a74" secondAttribute="centerY" id="oSF-5C-FfU"/>
+                                        <constraint firstAttribute="trailing" secondItem="21t-p4-JKY" secondAttribute="trailing" constant="20" id="quv-Hy-bUu"/>
+                                        <constraint firstAttribute="bottom" secondItem="gBa-xR-T2i" secondAttribute="bottom" constant="20" id="rne-fC-9Lh"/>
+                                        <constraint firstItem="gBa-xR-T2i" firstAttribute="leading" secondItem="bCs-RV-a74" secondAttribute="leading" constant="20" id="sm1-82-cjk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkImageView" destination="gBa-xR-T2i" id="Pgg-c7-n7N"/>
+                                    <outlet property="shoppingLabel" destination="qyf-cw-h0e" id="ZIU-hG-jtK"/>
+                                    <outlet property="starButton" destination="21t-p4-JKY" id="PBP-MM-gNA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="olg-Fb-gcc" id="5mw-Gp-uCJ"/>
+                            <outlet property="delegate" destination="olg-Fb-gcc" id="ZEp-hg-GuB"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="userTextField" destination="KDF-zd-sy1" id="dnx-k6-uKv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jWP-w9-RLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="-62.276785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
